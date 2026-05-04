@@ -1,26 +1,326 @@
 @import "tailwindcss";
 
+/* ========================================
+   REFINED TECH - Design System
+   Clean, mature, professional tech aesthetic
+   ======================================== */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Core Colors - Light Theme */
+  --background: #FAFAFA;
+  --background-alt: #F4F4F5;
+  --background-tertiary: #E4E4E7;
+  --foreground: #18181B;
+  --foreground-muted: #71717A;
+
+  /* Brand Colors - Single accent: Navy */
+  --accent-primary: #1E3A5F;
+  --accent-primary-hover: #152A45;
+  --accent-secondary: #2563EB;
+  --accent-success: #059669;
+
+  /* Borders */
+  --border: #E4E4E7;
+  --border-hover: #D4D4D8;
+  --border-accent: #1E3A8A;
+}
+
+/* Dark Theme */
+.dark {
+  --background: #0F172A;
+  --background-alt: #1E293B;
+  --background-tertiary: #334155;
+  --foreground: #F8FAFC;
+  --foreground-muted: #94A3B8;
+
+  --accent-primary: #60A5FA;
+  --accent-primary-hover: #93C5FD;
+  --accent-secondary: #93C5FD;
+  --accent-success: #34D399;
+
+  --border: #334155;
+  --border-hover: #475569;
+  --border-accent: #3B82F6;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-sans), system-ui, sans-serif;
+  --font-mono: var(--font-mono), monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ========================================
+   Base Styles
+   ======================================== */
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Selection */
+::selection {
+  background: var(--accent-primary);
+  color: #fff;
+}
+
+/* ========================================
+   Typography
+   ======================================== */
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* ========================================
+   Cards & Surfaces
+   ======================================== */
+
+.card {
+  background: var(--background);
+  border: 1px solid var(--border);
+  transition: all 0.2s ease;
+}
+
+.card:hover {
+  border-color: var(--border-hover);
+  box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.08);
+}
+
+.dark .card:hover {
+  box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.4);
+}
+
+/* Legacy support */
+.glass-card {
+  background: var(--background);
+  border: 1px solid var(--border);
+  transition: all 0.2s ease;
+}
+
+.glass-card:hover {
+  border-color: var(--border-hover);
+}
+
+/* ========================================
+   Buttons
+   ======================================== */
+
+.btn-primary {
+  background: var(--accent-primary);
+  color: #fff;
+  font-weight: 500;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+  background: var(--accent-primary-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px -2px rgba(30, 58, 95, 0.3);
+}
+
+.dark .btn-primary:hover {
+  box-shadow: 0 4px 12px -2px rgba(96, 165, 250, 0.3);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--foreground);
+  font-weight: 500;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+}
+
+/* ========================================
+   Animations
+   ======================================== */
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.4s ease forwards;
+  opacity: 0;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease forwards;
+  opacity: 0;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.3s ease forwards;
+  opacity: 0;
+}
+
+/* Stagger delays */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+.delay-600 { animation-delay: 600ms; }
+.delay-700 { animation-delay: 700ms; }
+
+/* ========================================
+   Tech Tags
+   ======================================== */
+
+.tech-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.625rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  font-family: var(--font-mono);
+  color: var(--foreground-muted);
+  background: var(--background-alt);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.tech-tag:hover {
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+}
+
+/* ========================================
+   Category Badges
+   ======================================== */
+
+.badge-deep-learning,
+.badge-machine-learning,
+.badge-computer-vision,
+.badge-nlp,
+.badge-data-analysis,
+.badge-mlops {
+  background: var(--background-alt);
+  color: var(--accent-primary);
+  border: 1px solid var(--border);
+}
+
+.dark .badge-deep-learning,
+.dark .badge-machine-learning,
+.dark .badge-computer-vision,
+.dark .badge-nlp,
+.dark .badge-data-analysis,
+.dark .badge-mlops {
+  background: var(--background-alt);
+  color: var(--accent-secondary);
+  border: 1px solid var(--border);
+}
+
+/* ========================================
+   Scrollbar
+   ======================================== */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background-alt);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--border-hover);
+}
+
+/* ========================================
+   Focus States
+   ======================================== */
+
+:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+}
+
+/* ========================================
+   Decorative Elements
+   ======================================== */
+
+.divider {
+  height: 1px;
+  background: var(--border);
+  width: 100%;
+}
+
+.divider-accent {
+  height: 2px;
+  background: var(--accent-primary);
+  width: 48px;
+}
+
+/* ========================================
+   Stat Numbers
+   ======================================== */
+
+.stat-number {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  color: var(--accent-primary);
+  letter-spacing: -0.02em;
+}
+
+.stat-label {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--foreground-muted);
 }

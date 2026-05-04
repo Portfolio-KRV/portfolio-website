@@ -1,65 +1,103 @@
-import Image from "next/image";
+'use client';
+
+import Link from 'next/link';
+import { useI18n } from '@/lib/i18n-context';
 
 export default function Home() {
+  const { t } = useI18n();
+
+  const techStack = [
+    'Python',
+    'TensorFlow',
+    'PyTorch',
+    'AWS',
+    'SageMaker',
+    'SQL',
+    'Docker',
+    'MLOps',
+  ];
+
+  const stats = [
+    { value: '4+', label: t.home.yearsExp || 'Years Experience' },
+    { value: '25+', label: t.home.teamSize || 'People Led' },
+    { value: 'IEEE CAI', label: t.home.published || 'Published' },
+  ];
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <div className="relative min-h-[calc(100vh-4rem)]">
+      {/* Main content */}
+      <div className="relative z-10 flex min-h-[calc(100vh-4rem)] flex-col items-center justify-center px-4 py-24">
+        <div className="mx-auto max-w-3xl text-center">
+          {/* Greeting */}
+          <p className="animate-fade-in-up mb-4 text-sm text-[var(--foreground-muted)]">
+            {t.home.greeting}
           </p>
+
+          {/* Name */}
+          <h1 className="animate-fade-in-up delay-100 mb-6 text-5xl font-bold tracking-tight text-[var(--foreground)] sm:text-6xl">
+            {t.home.name}
+          </h1>
+
+          {/* Role */}
+          <p className="animate-fade-in-up delay-200 mb-4 text-xl font-medium text-[var(--accent-primary)] sm:text-2xl">
+            {t.home.role}
+          </p>
+
+          {/* Tagline */}
+          <p className="animate-fade-in-up delay-300 mb-8 text-sm tracking-wide text-[var(--foreground-muted)]">
+            {t.home.tagline}
+          </p>
+
+          {/* Description */}
+          <p className="animate-fade-in-up delay-400 mx-auto mb-10 max-w-2xl text-base leading-relaxed text-[var(--foreground-muted)]">
+            {t.home.description}
+          </p>
+
+          {/* CTA Buttons */}
+          <div className="animate-fade-in-up delay-500 mb-16 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <Link href="/projects" className="btn-primary inline-flex items-center justify-center">
+              {t.home.viewProjects}
+              <svg className="ml-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </Link>
+            <Link href="/about" className="btn-secondary inline-flex items-center justify-center">
+              {t.home.aboutMe}
+            </Link>
+          </div>
+
+          {/* Stats */}
+          <div className="animate-fade-in-up delay-600 mb-16 flex flex-wrap items-center justify-center gap-12 sm:gap-16">
+            {stats.map((stat, index) => (
+              <div key={index} className="text-center">
+                <div className="stat-number text-4xl sm:text-5xl">{stat.value}</div>
+                <div className="stat-label mt-2">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+
+          {/* Divider */}
+          <div className="animate-fade-in-up delay-600 mx-auto mb-12 divider-accent" />
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        {/* Tech stack */}
+        <div className="animate-fade-in delay-700 w-full max-w-3xl">
+          <p className="mb-6 text-center text-xs font-medium uppercase tracking-widest text-[var(--foreground-muted)]">
+            {t.home.techStack || 'Technical Expertise'}
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-2">
+            {techStack.map((tech, index) => (
+              <span
+                key={tech}
+                className="tech-tag animate-scale-in"
+                style={{ animationDelay: `${700 + index * 50}ms` }}
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
         </div>
-      </main>
+      </div>
     </div>
   );
 }
