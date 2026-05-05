@@ -4,7 +4,7 @@ export const SITE_CONFIG = {
   name: 'Kevin Reyes',
   title: 'Kevin Reyes | CTO & Data Science Portfolio',
   description: 'CTO at FlowPagos. Data Science, Machine Learning, MLOps, and Leadership. Explore my projects and research.',
-  url: 'https://kevinreyes.dev',
+  url: 'https://kevinreyesv.dev',
   email: 'kevin.reyes@flowpagos.com',
   linkedin: 'https://linkedin.com/in/kevinreyesv',
   github: 'https://github.com/Portfolio-KRV',
