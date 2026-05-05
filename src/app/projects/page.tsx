@@ -73,10 +73,7 @@ export default function ProjectsPage() {
             <div className="mb-8 flex items-end justify-between gap-6 border-b border-[var(--border)] pb-4">
               <div>
                 <div className="mb-2 flex items-center gap-2">
-                  <span className="relative flex h-2 w-2">
-                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[var(--accent-success)] opacity-75" />
-                    <span className="relative inline-flex h-2 w-2 rounded-full bg-[var(--accent-success)]" />
-                  </span>
+                  <span className="inline-flex h-2 w-2 rounded-full bg-[var(--accent-success)]" />
                   <span className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--accent-success)]">
                     {t.projects.featuredTitle}
                   </span>
