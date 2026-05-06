@@ -195,7 +195,7 @@ export const projectsData: ProjectData[] = [
     technologies: ['TensorFlow', 'Keras', 'NLTK', 'NumPy', 'Matplotlib', 'Seaborn', 'Scikit-learn', 'Pandas'],
     category: 'nlp',
     githubUrl: 'https://github.com/Portfolio-KRV/attention-feelings',
-    hasDemoAvailable: false,    course: { en: 'Quantitative Methods and Models', es: 'Métodos y Modelos Cuantitativos' },
+    hasDemoAvailable: true,    course: { en: 'Quantitative Methods and Models', es: 'Métodos y Modelos Cuantitativos' },
   },
   {
     slug: 'fashion-autoencoder',
