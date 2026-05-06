@@ -28,12 +28,12 @@ export const translations = {
     },
     about: {
       title: 'About Me',
-      intro: "I have a profile that combines technical excellence with well-developed interpersonal skills. My ability to communicate complex ideas clearly and translate technical relevance into business value has been key in my career. Before focusing on any tool or technology, I always think about how to solve problems conceptually—then I apply the available tools on top of that foundation.",
-      hook: "I'm passionate about building things that matter: scalable data systems, intelligent models, and high-performing teams. My journey has taken me from building the first BI dashboards at a mining division to presenting research at IEEE in Silicon Valley, and now leading technology strategy as CTO.",
+      intro: "I work at the intersection of data engineering, ML, and team leadership. My background spans building production fraud detection on real transactional data, designing data warehouses that compressed months of legacy work, and leading the technical roadmap of a 25-person organization. I'm drawn to systems-level questions: how data flows shape decisions, how teams compound over time, what makes infrastructure quietly reliable.",
+      hook: "From the first BI dashboards at a mining division to presenting transformer research at IEEE in Silicon Valley — and now leading technology at a payments platform. I work where data, models, and engineering teams meet.",
 
       // Current Role
       currentRole: 'Current Role',
-      currentRoleContent: "As CTO at FlowPagos, I lead the technology strategy of a team of over 25 people across three areas: Software Development, Infrastructure, and Data & Analytics. I define the technical roadmap and align team capabilities with business objectives. I've been in this role for 6 months, so I consider it early to talk about results, but I'm focused on building a solid technological foundation for the company's growth.",
+      currentRoleContent: "CTO at FlowPagos since July 2025. I lead a 25-person organization across Software Development, Infrastructure, and Data & Analytics — owning the technical roadmap and aligning it with business priorities. Stepped into the role after building and leading the data and analytics area as Data & Analytics Lead.",
 
       // Achievements section
       achievements: 'Key Achievements',
@@ -60,20 +60,20 @@ export const translations = {
 
       // My Approach section
       approachTitle: 'My Approach',
-      approach: "More than focusing on a specific tool, technology, or technical topic, I always think about how to solve problems conceptually first. My passion for improving things and achieving the best results spans from technical aspects to business matters. I believe many ideas that apply at a technical level are also useful when applied at a human level, and vice versa. I tend to have a process-focused view, but rather than adjusting reality to fit the structure, I prefer to unravel the structure of reality and optimize from there.",
+      approach: "I work problem-first, not tool-first. The choice of stack, model, or pattern is downstream of understanding what's actually broken and which constraint matters most. The same lens travels well across technical and people problems: a team's quarterly priorities and an ETL's bottleneck both reward whoever diagnoses before prescribing.",
 
       // What drives me
       drivesTitle: 'What Drives Me',
-      drives: "I'm passionate about both the technical side and leading teams, managing projects, and understanding the business. I'm always looking for opportunities for improvement and impact in any of these dimensions. I love challenges and learning new things—this has been a constant throughout my career, from building data warehouses to presenting research at international conferences.",
+      drives: "What keeps pulling me is depth and breadth at the same time. The year I'm tuning a transformer for fraud detection is also the year I'm reorganizing how a team prioritizes its quarter. The two muscles feed each other: engineering taste sharpens leadership decisions, and operational reality sharpens the technical ones.",
 
       // Career Journey
       careerTitle: 'Career Journey',
       career: {
         flow: {
           title: 'FlowPagos',
-          period: '2021 - Present',
-          roles: 'CTO → Data & Analytics Lead → Data Scientist',
-          description: "I've grown from Data Scientist to CTO at this payments platform company. Built the data infrastructure, led AI initiatives, and now oversee all technology strategy.",
+          period: '2022 - Present',
+          roles: 'Data Scientist → Data & Analytics Lead → CTO',
+          description: "Four years at this payments platform. As Data Scientist, built the data warehouse and ETL system that cut load times by 85% and shipped real-time fraud detection (<300ms). As Data & Analytics Lead, founded the data and analytics area from scratch — structure, processes, 4-person team — and led the AI roadmap (transformer research at IEEE, multi-agent chatbot, MLOps standard repo, SII/SAT classifiers). As CTO now own the full technology strategy across a 25-person organization.",
         },
         consulting: {
           title: 'MLOps Consulting',
@@ -83,15 +83,15 @@ export const translations = {
         },
         codelco: {
           title: 'Codelco',
-          period: '2019 - 2020',
+          period: '2020 · 2021 - 2022',
           roles: 'Professional Internship & Thesis',
-          description: "Implemented the division's first BI dashboards and trained 20+ workers in Power BI. Developed my engineering thesis focused on data-driven decision making.",
+          description: "Internship (2020): implemented the division's first BI dashboards — used in daily analysis meetings — and trained 20+ workers in Power BI. Thesis (2021-2022): built a neural network that predicted the SAG Mill's effective treatment 1 hour ahead with 4.38% MAPE on the test set — applied ML on mining operations data.",
         },
         university: {
           title: 'UTFSM University',
-          period: '2015 - 2020',
+          period: '2017 - 2022',
           roles: 'Computer Science Engineering',
-          description: 'Research Assistant and co-founder of DataLab initiative. Completed a diploma in IT Project Management through a scholarship.',
+          description: "Computer Science Engineering. Co-founded the DataLab initiative — a proposal for a data science and AI laboratory that secured UTFSM-Scotiabank funding and was implemented across both campuses. Lab teaching assistant for Databases (data models, normalization, SQL, web development, query optimization, contributed to the official course gitbook). Research assistant on a CS curriculum improvement project. IT Project Management diploma via scholarship.",
         },
       },
 
@@ -109,10 +109,14 @@ export const translations = {
         title: 'IT Project Management Diploma',
         content: "Thanks to a scholarship, I completed a diploma in IT Project Management, which allowed me to enter the workforce with a project and team management perspective that complemented my technical interests very well.",
       },
+      softwareExpo: {
+        title: '1st Place — Software Exposition',
+        content: "Led a team to 1st place out of 10 teams at UTFSM's XXIX Software Exposition (annual university software competition) — judged on build, technical depth, and presentation.",
+      },
 
       // IEEE Experience
       ieeeTitle: 'IEEE CAI 2025 Experience',
-      ieeeContent: "I conducted research on transformer neural networks applied to transactional fraud detection. In the paper, together with Vasco Cortez, we proposed a modification to positional encoding to adapt it to an explicit representation of temporal distance between transactions in a sequence of interest. We submitted it to IEEE CAI 2025 and it was accepted. I traveled to Silicon Valley to present it, which was an enriching experience from many perspectives.",
+      ieeeContent: "With Vasco Cortez I worked on a modification to positional encoding in transformers — adapting it to represent the actual temporal distance between transactions in a sequence, rather than just their order. We tested it on transactional fraud detection. The paper was accepted at IEEE CAI 2025 and I presented it in Silicon Valley. The most useful part wasn't the talk itself but the conversations afterwards: applied ML research is a small world, and being there in person changes what you ship the year after.",
     },
     projects: {
       title: 'Projects',
@@ -193,12 +197,12 @@ export const translations = {
     },
     about: {
       title: 'Sobre Mí',
-      intro: "Tengo un perfil que combina excelencia técnica con habilidades interpersonales bien desarrolladas. Mi capacidad para comunicar ideas complejas de manera clara y traducir la relevancia técnica a valor de negocio ha sido clave en mi carrera. Antes de centrarme en cualquier herramienta o tecnología, siempre pienso en cómo resolver los problemas de manera conceptual—luego sobre eso aplico las distintas herramientas disponibles.",
-      hook: "Me apasiona construir cosas que importan: sistemas de datos escalables, modelos inteligentes y equipos de alto rendimiento. Mi camino me ha llevado desde construir los primeros paneles de BI en una división minera hasta presentar investigación en IEEE en Silicon Valley, y ahora liderar la estrategia tecnológica como CTO.",
+      intro: "Trabajo en la intersección de data engineering, ML y liderazgo de equipos. Mi experiencia incluye construir detección de fraude en producción sobre datos transaccionales reales, diseñar data warehouses que comprimieron meses de trabajo legacy, y liderar el roadmap técnico de una organización de 25 personas. Me interesan las preguntas a nivel de sistema: cómo los flujos de datos moldean decisiones, cómo los equipos componen valor en el tiempo, qué hace que la infraestructura sea silenciosamente confiable.",
+      hook: "Desde los primeros paneles de BI en una división minera hasta presentar investigación con transformers en IEEE en Silicon Valley — y ahora liderando la tecnología en una plataforma de pagos. Trabajo donde se encuentran los datos, los modelos y los equipos de ingeniería.",
 
       // Current Role
       currentRole: 'Rol Actual',
-      currentRoleContent: "Como CTO en FlowPagos, lidero la estrategia de tecnología de un equipo de más de 25 personas en tres áreas: Desarrollo de Software, Infraestructura, y Datos y Analítica. Defino el roadmap técnico y alineo las capacidades del equipo con los objetivos del negocio. Llevo 6 meses en el cargo, así que considero que es pronto para hablar de resultados, pero estoy enfocado en construir una base tecnológica sólida para el crecimiento de la empresa.",
+      currentRoleContent: "CTO en FlowPagos desde julio de 2025. Lidero una organización de 25 personas que abarca Desarrollo de Software, Infraestructura y Datos y Analítica — siendo dueño del roadmap técnico y alineándolo con las prioridades del negocio. Asumí el rol después de construir y liderar el área de datos y analítica como Data & Analytics Lead.",
 
       // Achievements section
       achievements: 'Logros Destacados',
@@ -225,20 +229,20 @@ export const translations = {
 
       // My Approach section
       approachTitle: 'Mi Enfoque',
-      approach: "Más que centrarme en una herramienta, tecnología o tema técnico específico, siempre pienso primero en cómo resolver los problemas de manera conceptual. Mi pasión por mejorar las cosas y llegar al mejor resultado va desde lo técnico hasta lo de negocio. Creo que muchas de las ideas que se aplican a nivel técnico también son útiles cuando se llevan a nivel humano y viceversa. Suelo tener una mirada muy enfocada en los procesos, pero más que ajustar la realidad a la estructura, prefiero desentrañar la estructura de la realidad y a partir de ahí optimizar.",
+      approach: "Trabajo desde el problema, no desde la herramienta. Qué stack, modelo o patrón se elige viene después de entender qué está realmente roto y qué restricción pesa más. Esa misma lente funciona bien en problemas técnicos y humanos: las prioridades trimestrales de un equipo y el cuello de botella de una ETL premian igual a quien diagnostica antes de prescribir.",
 
       // What drives me
       drivesTitle: 'Lo que Me Motiva',
-      drives: "Me apasiona tanto el lado técnico como liderar equipos, gestionar proyectos y entender el negocio. Siempre busco oportunidades de mejora e impacto en cualquiera de estas dimensiones. Me encantan los desafíos y aprender cosas nuevas—esto ha sido una constante a lo largo de mi carrera, desde construir data warehouses hasta presentar investigación en conferencias internacionales.",
+      drives: "Lo que me sigue moviendo es la profundidad y la amplitud al mismo tiempo. El año que ajusto un transformer para detección de fraude es también el año que reorganizo cómo un equipo prioriza su trimestre. Los dos músculos se alimentan: el criterio de ingeniería afila las decisiones de liderazgo, y la realidad operacional afila las técnicas.",
 
       // Career Journey
       careerTitle: 'Trayectoria Profesional',
       career: {
         flow: {
           title: 'FlowPagos',
-          period: '2021 - Presente',
-          roles: 'CTO → Líder de Datos y Analítica → Data Scientist',
-          description: "He crecido desde Data Scientist hasta CTO en esta empresa de plataforma de pagos. Construí la infraestructura de datos, lideré iniciativas de IA, y ahora superviso toda la estrategia tecnológica.",
+          period: '2022 - Presente',
+          roles: 'Data Scientist → Data & Analytics Lead → CTO',
+          description: "Cuatro años en esta plataforma de pagos. Como Data Scientist construí el data warehouse y el sistema de ETLs que redujo tiempos de carga en 85% y lancé la detección de fraude en tiempo real (<300ms). Como Data & Analytics Lead fundé el área de datos y analítica desde cero — estructura, procesos, equipo de 4 — y lideré el roadmap de IA (investigación con transformers en IEEE, chatbot multiagente, repositorio estándar MLOps, clasificadores SII/SAT). Como CTO ahora soy responsable de toda la estrategia tecnológica en una organización de 25 personas.",
         },
         consulting: {
           title: 'Consultoría MLOps',
@@ -248,15 +252,15 @@ export const translations = {
         },
         codelco: {
           title: 'Codelco',
-          period: '2019 - 2020',
+          period: '2020 · 2021 - 2022',
           roles: 'Práctica Profesional y Memoria',
-          description: "Implementé los primeros paneles de BI de la división y capacité a más de 20 trabajadores en Power BI. Desarrollé mi memoria de ingeniería enfocada en toma de decisiones basada en datos.",
+          description: "Práctica (2020): implementé los primeros paneles de BI de la división — usados en reuniones diarias de análisis — y capacité a más de 20 trabajadores en Power BI. Memoria (2021-2022): construí una red neuronal que predecía el tratamiento efectivo del Molino SAG con 1 hora de anticipación, logrando un MAPE de 4.38% en el conjunto de pruebas — ML aplicado a datos de operaciones mineras.",
         },
         university: {
           title: 'Universidad UTFSM',
-          period: '2015 - 2020',
+          period: '2017 - 2022',
           roles: 'Ingeniería Civil Informática',
-          description: 'Ayudante de Investigación y co-fundador de la iniciativa DataLab. Completé un diplomado en Dirección de Proyectos de TI gracias a una beca.',
+          description: 'Ingeniería Civil Informática. Co-fundé la iniciativa DataLab — una propuesta de laboratorio de data science e IA que obtuvo financiamiento UTFSM-Scotiabank y se implementó en ambos campus. Ayudante de laboratorio del curso de Bases de Datos (modelos de datos, normalización, SQL, desarrollo web, optimización de queries, contribuí al gitbook oficial). Ayudante de investigación en un proyecto de mejora del currículum de informática. Diplomado en Dirección de Proyectos de TI con beca.',
         },
       },
 
@@ -274,10 +278,14 @@ export const translations = {
         title: 'Diplomado en Dirección de Proyectos de TI',
         content: "Gracias a una beca pude realizar un diplomado en dirección de proyectos de TI, lo que me permitió entrar al mundo laboral con una visión de gestión de proyectos y equipos que complementó muy bien mis intereses técnicos.",
       },
+      softwareExpo: {
+        title: '1er Lugar — Exposición de Software',
+        content: "Lideré un equipo al 1er lugar entre 10 equipos en la XXIX Exposición de Software de la UTFSM (competencia anual de software de la universidad) — evaluada sobre build, profundidad técnica y presentación.",
+      },
 
       // IEEE Experience
       ieeeTitle: 'Experiencia IEEE CAI 2025',
-      ieeeContent: "Realicé una investigación sobre redes neuronales transformer aplicadas a la detección de fraude transaccional. En el paper, junto a Vasco Cortez, propusimos una modificación al positional encoding para adaptarlo a una representación explícita de la distancia temporal entre las transacciones en una secuencia de interés. Lo postulamos al IEEE CAI 2025 y fue aceptado. Viajé a Silicon Valley a presentarlo, lo que fue una experiencia muy enriquecedora desde distintos puntos de vista.",
+      ieeeContent: "Con Vasco Cortez trabajamos en una modificación al positional encoding de los transformers — adaptándolo para representar la distancia temporal real entre transacciones en una secuencia, en vez de solo su orden. Lo probamos en detección de fraude transaccional. El paper fue aceptado en IEEE CAI 2025 y lo presenté en Silicon Valley. La parte más útil no fue la charla en sí, sino las conversaciones de después: la investigación aplicada de ML es un mundo pequeño, y estar ahí en persona cambia lo que construyes el año siguiente.",
     },
     projects: {
       title: 'Proyectos',

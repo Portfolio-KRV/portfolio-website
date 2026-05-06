@@ -23,6 +23,7 @@ export default function AboutPage() {
 
   const universityContributions = [
     { key: 'datalab', icon: '🔬' },
+    { key: 'softwareExpo', icon: '🏆' },
     { key: 'research', icon: '📊' },
     { key: 'diploma', icon: '📜' },
   ] as const;
