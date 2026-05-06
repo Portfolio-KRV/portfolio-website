@@ -44,7 +44,7 @@ export default function Home() {
   return (
     <div className="relative">
       {/* Hero */}
-      <section className="relative px-4 pt-20 pb-12 sm:pt-24 sm:pb-16">
+      <section className="relative px-4 pt-10 pb-8 sm:pt-14 sm:pb-10">
         <div className="mx-auto max-w-3xl text-center">
           <p className="animate-fade-in-up mb-3 text-sm tracking-[0.18em] uppercase text-[var(--foreground-muted)]">
             {t.home.greeting}
@@ -76,7 +76,7 @@ export default function Home() {
       </section>
 
       {/* Stats */}
-      <section className="px-4 pb-16">
+      <section className="px-4 pb-12">
         <div className="mx-auto flex max-w-3xl flex-wrap items-center justify-center gap-10 sm:gap-16">
           {stats.map((stat) => (
             <div key={stat.label} className="text-center">
