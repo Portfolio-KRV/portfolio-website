@@ -18,7 +18,8 @@ export default function ExperiencePage() {
     { key: 'flowLead', iconPath: PATHS.chartBar },
     { key: 'flowDs', iconPath: PATHS.chartBar },
     { key: 'consulting', iconPath: PATHS.briefcase },
-    { key: 'codelco', iconPath: PATHS.building },
+    { key: 'codelcoThesis', iconPath: PATHS.building },
+    { key: 'codelcoIntern', iconPath: PATHS.building },
     { key: 'university', iconPath: PATHS.academicCap },
   ] as const;
 

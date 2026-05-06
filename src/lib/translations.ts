@@ -94,11 +94,17 @@ export const translations = {
           roles: 'Independent Consultant',
           description: 'Designed and implemented MLOps pipelines on AWS SageMaker, automating the complete cycle: preprocessing, training, evaluation, deployment, and model monitoring.',
         },
-        codelco: {
+        codelcoThesis: {
           title: 'Codelco',
-          period: '2020 · 2021 — 2022',
-          roles: 'Professional Internship & Thesis',
-          description: "Internship (2020): implemented the division's first BI dashboards — used in daily analysis meetings — and trained 20+ workers in Power BI. Thesis (2021-2022): built a neural network that predicted the SAG Mill's effective treatment 1 hour ahead with 4.38% MAPE on the test set — applied ML on mining operations data.",
+          period: 'Dec 2021 — May 2022',
+          roles: 'Thesis Student',
+          description: "Built a neural network that predicted the SAG Mill's effective treatment 1 hour ahead with 4.38% MAPE on the test set — applied ML on mining operations data.",
+        },
+        codelcoIntern: {
+          title: 'Codelco',
+          period: 'Jan — Mar 2020',
+          roles: 'Engineering Specialist Intern',
+          description: "Implemented the division's first BI dashboards — some used in daily analysis meetings — and trained 20+ workers in Power BI through an intensive theoretical-practical course.",
         },
         university: {
           title: 'UTFSM University',
@@ -280,11 +286,17 @@ export const translations = {
           roles: 'Consultor Independiente',
           description: 'Diseñé e implementé pipelines de MLOps en AWS SageMaker, automatizando el ciclo completo: preprocesamiento, entrenamiento, evaluación, despliegue y monitoreo de modelos.',
         },
-        codelco: {
+        codelcoThesis: {
           title: 'Codelco',
-          period: '2020 · 2021 — 2022',
-          roles: 'Práctica Profesional y Memoria',
-          description: "Práctica (2020): implementé los primeros paneles de BI de la división — usados en reuniones diarias de análisis — y capacité a más de 20 trabajadores en Power BI. Memoria (2021-2022): construí una red neuronal que predecía el tratamiento efectivo del Molino SAG con 1 hora de anticipación, logrando un MAPE de 4.38% en el conjunto de pruebas — ML aplicado a datos de operaciones mineras.",
+          period: 'Dic 2021 — May 2022',
+          roles: 'Memoria de Título',
+          description: "Construí una red neuronal que predecía el tratamiento efectivo del Molino SAG con 1 hora de anticipación, logrando un MAPE de 4.38% en el conjunto de pruebas — ML aplicado a datos de operaciones mineras.",
+        },
+        codelcoIntern: {
+          title: 'Codelco',
+          period: 'Ene — Mar 2020',
+          roles: 'Práctica Profesional',
+          description: "Implementé los primeros paneles de BI de la división — algunos usados en reuniones diarias de análisis — y capacité a más de 20 trabajadores en Power BI mediante un curso intensivo teórico-práctico.",
         },
         university: {
           title: 'Universidad UTFSM',
