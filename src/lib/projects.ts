@@ -340,7 +340,7 @@ export const projectsData: ProjectData[] = [
     technologies: ['Community', 'NetworkX', 'Matplotlib'],
     category: 'graphs',
     githubUrl: 'https://github.com/Portfolio-KRV/communities-graph',
-    hasDemoAvailable: true,    course: { en: 'Pattern Recognition in Data Mining', es: 'Reconocimiento de Patrones en Minería de Datos' },
+    hasDemoAvailable: false,    course: { en: 'Pattern Recognition in Data Mining', es: 'Reconocimiento de Patrones en Minería de Datos' },
   },
   {
     slug: 'text-entities',
