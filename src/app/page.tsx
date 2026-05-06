@@ -30,7 +30,11 @@ function DemoThumb({ slug }: { slug: string }) {
 
 export default function Home() {
   const { language, t } = useI18n();
-  const liveDemos = projectsData.filter((p) => p.featuredOnHome);
+  // Curated order on home — left to right.
+  const HOME_ORDER = ['signlang', 'monkeys', 'clustering'] as const;
+  const liveDemos = HOME_ORDER
+    .map((slug) => projectsData.find((p) => p.slug === slug && p.featuredOnHome))
+    .filter((p): p is NonNullable<typeof p> => p !== undefined);
 
   const stats = [
     { value: '25+', label: t.home.teamSize || 'People Led' },
