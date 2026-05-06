@@ -30,7 +30,7 @@ function DemoThumb({ slug }: { slug: string }) {
 
 export default function Home() {
   const { language, t } = useI18n();
-  const liveDemos = projectsData.filter((p) => p.hasDemoAvailable);
+  const liveDemos = projectsData.filter((p) => p.featuredOnHome);
 
   const stats = [
     { value: '25+', label: t.home.teamSize || 'People Led' },
@@ -114,7 +114,7 @@ export default function Home() {
             </div>
 
             <ul
-              className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5"
+              className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
               aria-label={t.home.liveDemosLabel}
             >
               {liveDemos.map((project, index) => (

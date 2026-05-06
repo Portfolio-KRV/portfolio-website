@@ -3,6 +3,7 @@ export const translations = {
     nav: {
       home: 'Home',
       about: 'About',
+      experience: 'Experience',
       projects: 'Projects',
       publications: 'Publications',
       contact: 'Contact',
@@ -160,6 +161,10 @@ export const translations = {
         'recommendation-systems': 'Recommendation Systems',
       },
     },
+    experience: {
+      title: 'Career Path',
+      subtitle: 'From Data Scientist at FlowPagos to CTO — and the path between.',
+    },
     publications: {
       title: 'Publications',
       subtitle: 'Recent research',
@@ -184,6 +189,7 @@ export const translations = {
     nav: {
       home: 'Inicio',
       about: 'Sobre Mí',
+      experience: 'Experiencia',
       projects: 'Proyectos',
       publications: 'Publicaciones',
       contact: 'Contacto',
@@ -340,6 +346,10 @@ export const translations = {
         'machine-learning': 'Machine Learning',
         'recommendation-systems': 'Sistemas de Recomendación',
       },
+    },
+    experience: {
+      title: 'Trayectoria',
+      subtitle: 'De Data Scientist en FlowPagos a CTO — y el camino entre medio.',
     },
     publications: {
       title: 'Publicaciones',

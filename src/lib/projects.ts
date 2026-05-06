@@ -10,6 +10,7 @@ interface ProjectData {
   category: ProjectCategory;
   githubUrl: string;
   hasDemoAvailable: boolean;
+  featuredOnHome?: boolean;
   coAuthors?: string[];
   course: { en: string; es: string };
 }
@@ -125,7 +126,8 @@ export const projectsData: ProjectData[] = [
     technologies: ['TensorFlow', 'Keras', 'Pandas', 'NumPy', 'Matplotlib', 'Seaborn', 'Scikit-learn'],
     category: 'computer-vision',
     githubUrl: 'https://github.com/Portfolio-KRV/signlang',
-    hasDemoAvailable: true,    coAuthors: ['Diego Quezada'],
+    hasDemoAvailable: true,
+    featuredOnHome: true,    coAuthors: ['Diego Quezada'],
     course: { en: 'Neural Networks', es: 'Redes Neuronales' },
   },
   {
@@ -304,7 +306,8 @@ export const projectsData: ProjectData[] = [
     technologies: ['Scikit-learn', 'FastAPI', 'Matplotlib', 'NumPy'],
     category: 'clustering',
     githubUrl: 'https://github.com/Portfolio-KRV/clustering',
-    hasDemoAvailable: true,    course: { en: 'Pattern Recognition in Data Mining', es: 'Reconocimiento de Patrones en Minería de Datos' },
+    hasDemoAvailable: true,
+    featuredOnHome: true,    course: { en: 'Pattern Recognition in Data Mining', es: 'Reconocimiento de Patrones en Minería de Datos' },
   },
   {
     slug: 'communities-graph',
@@ -413,7 +416,8 @@ export const projectsData: ProjectData[] = [
     technologies: ['NumPy', 'Pandas', 'Matplotlib', 'Seaborn', 'OpenCV', 'Keras', 'TensorFlow', 'VGG16', 'VGG19', 'FastAPI'],
     category: 'computer-vision',
     githubUrl: 'https://github.com/Portfolio-KRV/monkeys',
-    hasDemoAvailable: true,    coAuthors: ['Diego Quezada'],
+    hasDemoAvailable: true,
+    featuredOnHome: true,    coAuthors: ['Diego Quezada'],
     course: { en: 'Neural Networks', es: 'Redes Neuronales' },
   },
   {
