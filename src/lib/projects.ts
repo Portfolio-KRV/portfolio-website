@@ -375,7 +375,7 @@ export const projectsData: ProjectData[] = [
     technologies: ['spaCy', 'FastAPI', 'Keras', 'TensorFlow', 'Matplotlib', 'NumPy', 'Pandas', 'Scikit-learn'],
     category: 'nlp',
     githubUrl: 'https://github.com/Portfolio-KRV/text-entities',
-    hasDemoAvailable: false,    coAuthors: ['Diego Quezada'],
+    hasDemoAvailable: true,    coAuthors: ['Diego Quezada'],
     course: { en: 'Neural Networks', es: 'Redes Neuronales' },
   },
   {
