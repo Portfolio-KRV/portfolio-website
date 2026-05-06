@@ -31,7 +31,7 @@ function DemoThumb({ slug }: { slug: string }) {
 export default function Home() {
   const { language, t } = useI18n();
   // Curated order on home — left to right.
-  const HOME_ORDER = ['signlang', 'monkeys', 'clustering'] as const;
+  const HOME_ORDER = ['signlang', 'monkeys', 'attention-feelings', 'clustering'] as const;
   const liveDemos = HOME_ORDER
     .map((slug) => projectsData.find((p) => p.slug === slug && p.featuredOnHome))
     .filter((p): p is NonNullable<typeof p> => p !== undefined);
@@ -118,7 +118,7 @@ export default function Home() {
             </div>
 
             <ul
-              className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
+              className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
               aria-label={t.home.liveDemosLabel}
             >
               {liveDemos.map((project, index) => (
