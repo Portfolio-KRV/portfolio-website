@@ -35,7 +35,7 @@ export default function AboutPage() {
         {/* Header */}
         <div className="mb-16">
           <p className="animate-fade-in-up mb-6 text-sm uppercase tracking-[0.2em] text-[var(--foreground-muted)]">
-            {language === 'es' ? 'Sobre Mí' : 'About'}
+            {language === 'es' ? 'Perfil' : 'Profile'}
           </p>
           <h1 className="animate-fade-in-up delay-100 mb-8 text-4xl font-bold tracking-tight text-[var(--foreground)] sm:text-5xl">
             {t.about.title}

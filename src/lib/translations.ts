@@ -167,7 +167,7 @@ export const translations = {
     },
     publications: {
       title: 'Publications',
-      subtitle: 'Recent research',
+      subtitle: 'Conference contributions to applied ML.',
       ieeeTitle: 'Transformers for Fraud Detection: Temporal Positional Encoding',
       ieeeDescription: 'Research on transformers for fraud detection, proposing a modification to positional encoding to represent temporal distance between transactions. Presented at IEEE CAI 2025 in Silicon Valley.',
       ieeeVenue: 'IEEE CAI 2025 - Silicon Valley',
@@ -175,7 +175,7 @@ export const translations = {
     },
     contact: {
       title: 'Contact',
-      subtitle: "If you're working on interesting problems in data, AI, or technical leadership, I'd be happy to compare notes.",
+      subtitle: "If you're tackling something interesting in data, AI, or technical leadership — let's talk about how I can help.",
       email: 'Email',
       linkedin: 'LinkedIn',
       github: 'GitHub',
@@ -353,7 +353,7 @@ export const translations = {
     },
     publications: {
       title: 'Publicaciones',
-      subtitle: 'Investigación reciente',
+      subtitle: 'Trabajo en conferencias de ML aplicado.',
       ieeeTitle: 'Transformers para Detección de Fraude: Codificación Posicional Temporal',
       ieeeDescription: 'Investigación sobre transformers para detección de fraude, proponiendo una modificación al positional encoding para representar distancia temporal entre transacciones. Presentado en IEEE CAI 2025 en Silicon Valley.',
       ieeeVenue: 'IEEE CAI 2025 - Silicon Valley',
@@ -361,7 +361,7 @@ export const translations = {
     },
     contact: {
       title: 'Contacto',
-      subtitle: 'Si estás trabajando en problemas interesantes de datos, IA o liderazgo técnico, me encantaría intercambiar ideas.',
+      subtitle: 'Si estás trabajando en algo interesante de datos, IA o liderazgo técnico — conversemos sobre cómo puedo ayudarte.',
       email: 'Email',
       linkedin: 'LinkedIn',
       github: 'GitHub',
