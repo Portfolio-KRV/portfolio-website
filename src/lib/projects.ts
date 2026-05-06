@@ -94,8 +94,8 @@ export const projectsData: ProjectData[] = [
     slug: 'signlang',
     title: { en: 'Sign Language Recognition', es: 'Reconocimiento de Lenguaje de Señas' },
     description: {
-      en: 'Evaluation of convolutional neural network models for sign language recognition using batch normalization and data augmentation.',
-      es: 'Evaluación de modelos de redes neuronales convolucionales para reconocimiento de lenguaje de señas usando batch normalization y data augmentation.',
+      en: 'A small CNN that recognizes hand signs for 24 letters of the ASL alphabet from your webcam — ~50 ms per prediction. Plus a closer look at which signs the model confuses (N vs S, C vs O) and why.',
+      es: 'Una CNN pequeña que reconoce señas de mano para 24 letras del alfabeto ASL desde tu webcam — ~50 ms por predicción. Más una mirada cercana a qué señas confunde el modelo (N vs S, C vs O) y por qué.',
     },
     objectives: {
       en: [
@@ -278,8 +278,8 @@ export const projectsData: ProjectData[] = [
     slug: 'clustering',
     title: { en: 'Clustering Algorithms Comparison', es: 'Comparación de Algoritmos de Clustering' },
     description: {
-      en: 'Comparative study of clustering algorithms: K-means, hierarchical agglomerative clustering and DBSCAN.',
-      es: 'Estudio comparativo de algoritmos de clustering: K-means, clustering jerárquico aglomerativo y DBSCAN.',
+      en: "Three clustering algorithms (K-Means, DBSCAN, HAC) tested side-by-side on three different geometries — circular blobs, density-varying clusters, and shapes connected by outliers. The 'best' algorithm depends on the geometry; this demo lets you see how each one fails in different ways.",
+      es: "Tres algoritmos de clustering (K-Means, DBSCAN, HAC) probados lado a lado en tres geometrías distintas — blobs circulares, clusters de densidad variable, y formas conectadas por outliers. El 'mejor' algoritmo depende de la geometría; este demo te deja ver cómo cada uno falla de formas distintas.",
     },
     objectives: {
       en: [
@@ -313,8 +313,8 @@ export const projectsData: ProjectData[] = [
     slug: 'communities-graph',
     title: { en: 'Community Detection in Graphs', es: 'Detección de Comunidades en Grafos' },
     description: {
-      en: 'Detection of communities in email interaction graphs using Louvain algorithm.',
-      es: 'Detección de comunidades en grafos de interacciones por email usando algoritmo de Louvain.',
+      en: "Louvain community detection on the Enron email graph — the same dataset that surfaced the executives' coordination patterns during the 2001 investigation. Tweak the resolution and watch the communities split or merge.",
+      es: 'Detección de comunidades con Louvain sobre el grafo de emails de Enron — el mismo dataset que reveló los patrones de coordinación de los ejecutivos durante la investigación de 2001. Ajusta la resolución y mira cómo las comunidades se dividen o se fusionan.',
     },
     objectives: {
       en: [
@@ -382,8 +382,8 @@ export const projectsData: ProjectData[] = [
     slug: 'monkeys',
     title: { en: 'Monkey Breed Classification', es: 'Clasificación de Razas de Monos' },
     description: {
-      en: 'CNNs for monkey breed classification using Transfer Learning and CAM for visualization.',
-      es: 'CNNs para clasificación de razas de monos usando Transfer Learning y CAM para visualización.',
+      en: 'Transfer learning on VGG16 pushes monkey breed classification from 78% (trained from scratch) to 96%. Plus CAM heatmaps showing where the network actually looks — turns out it is mostly the eyes and nose, not the fur.',
+      es: 'Transfer learning sobre VGG16 sube la clasificación de razas de monos de 78% (entrenado desde cero) a 96%. Más mapas CAM que muestran dónde mira realmente la red — resulta que son los ojos y la nariz, no el pelaje.',
     },
     objectives: {
       en: [
@@ -540,8 +540,8 @@ export const projectsData: ProjectData[] = [
     slug: 'dnomads',
     title: { en: 'Digital Nomads Travel Cost Prediction', es: 'Predicción de Costos de Viaje para Nómadas Digitales' },
     description: {
-      en: 'Linear model to predict the cost of travel packages for digital nomads with feature engineering and NLP methods.',
-      es: 'Modelo lineal para predecir el costo de paquetes de viaje para nómadas digitales con ingeniería de características y métodos de NLP.',
+      en: 'A linear regression that predicts travel package costs — and a story about feature engineering. The raw dataset described packages with text only; scraped distance and per-airline cost-per-km tables to derive numeric features. R² went from 0.45 to 0.72.',
+      es: 'Una regresión lineal que predice costos de paquetes de viaje — y una historia sobre feature engineering. El dataset describía los paquetes solo con texto; scrapeamos tablas de distancias y de costo-por-km por aerolínea para derivar features numéricos. El R² subió de 0.45 a 0.72.',
     },
     objectives: {
       en: [
