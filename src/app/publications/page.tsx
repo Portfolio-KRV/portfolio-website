@@ -72,6 +72,20 @@ export default function PublicationsPage() {
             <span className="text-sm text-[var(--foreground-muted)]">{t.publications.ieeeVenue}</span>
           </div>
 
+          {/* Actions */}
+          <div className="flex flex-wrap gap-3">
+            <a
+              href="https://ieeexplore.ieee.org/document/11050560"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary inline-flex items-center gap-2"
+            >
+              {t.publications.viewPaper}
+              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </a>
+          </div>
         </article>
       </div>
     </div>

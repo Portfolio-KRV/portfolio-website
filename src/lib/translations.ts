@@ -69,27 +69,39 @@ export const translations = {
       // Career Journey
       careerTitle: 'Career Journey',
       career: {
-        flow: {
-          title: 'FlowPagos',
-          period: '2022 - Present',
-          roles: 'Data Scientist → Data & Analytics Lead → CTO',
-          description: "Four years at this payments platform. As Data Scientist, built the data warehouse and ETL system that cut load times by 85% and shipped real-time fraud detection (<300ms). As Data & Analytics Lead, founded the data and analytics area from scratch — structure, processes, 4-person team — and led the AI roadmap (transformer research at IEEE, multi-agent chatbot, MLOps standard repo, SII/SAT classifiers). As CTO now own the full technology strategy across a 25-person organization.",
+        flowCto: {
+          title: 'CTO',
+          period: 'FlowPagos · Jul 2025 — Present',
+          roles: '',
+          description: "Lead a 25-person organization across Software Development, Infrastructure, and Data & Analytics. Define the technical roadmap and align team capabilities with business priorities. Stepped into the role after building and leading the data and analytics area as Data & Analytics Lead.",
+        },
+        flowLead: {
+          title: 'Data & Analytics Lead',
+          period: 'FlowPagos · Jun 2024 — Jul 2025',
+          roles: '',
+          description: "Founded the data and analytics area from scratch — structure, processes, and a 4-person team. Co-authored the IEEE CAI 2025 transformer-for-fraud-detection paper. Built the standard AI repository (GitLab CI/CD, AWS CDK, SageMaker, FastAPI, EKS, LLM development with LangChain). Designed a multi-agent architecture for an enterprise chatbot (internal + customer-facing). Extended ML capabilities with SII (Chile) and SAT (Mexico) code classifiers and Jira-LLM automations.",
+        },
+        flowDs: {
+          title: 'Data Scientist',
+          period: 'FlowPagos · Jun 2022 — May 2024',
+          roles: '',
+          description: "Built the data warehouse with end-to-end incremental loading — cut load times and costs by 85%, handling millions of transactional records. Shipped the real-time fraud detection model (<300ms, end-to-end to production). Led the BI platform's design and implementation, including data quality and dashboard usage monitoring. Built the MCC classifier for merchant onboarding and the ETL code generator for AWS Glue.",
         },
         consulting: {
           title: 'MLOps Consulting',
-          period: 'Jan 2025 - Jul 2025',
+          period: 'Freelance · Jan 2025 — Jul 2025',
           roles: 'Independent Consultant',
           description: 'Designed and implemented MLOps pipelines on AWS SageMaker, automating the complete cycle: preprocessing, training, evaluation, deployment, and model monitoring.',
         },
         codelco: {
           title: 'Codelco',
-          period: '2020 · 2021 - 2022',
+          period: '2020 · 2021 — 2022',
           roles: 'Professional Internship & Thesis',
           description: "Internship (2020): implemented the division's first BI dashboards — used in daily analysis meetings — and trained 20+ workers in Power BI. Thesis (2021-2022): built a neural network that predicted the SAG Mill's effective treatment 1 hour ahead with 4.38% MAPE on the test set — applied ML on mining operations data.",
         },
         university: {
           title: 'UTFSM University',
-          period: '2017 - 2022',
+          period: '2017 — 2022',
           roles: 'Computer Science Engineering',
           description: "Computer Science Engineering. Co-founded the DataLab initiative — a proposal for a data science and AI laboratory that secured UTFSM-Scotiabank funding and was implemented across both campuses. Lab teaching assistant for Databases (data models, normalization, SQL, web development, query optimization, contributed to the official course gitbook). Research assistant on a CS curriculum improvement project. IT Project Management diploma via scholarship.",
         },
@@ -238,27 +250,39 @@ export const translations = {
       // Career Journey
       careerTitle: 'Trayectoria Profesional',
       career: {
-        flow: {
-          title: 'FlowPagos',
-          period: '2022 - Presente',
-          roles: 'Data Scientist → Data & Analytics Lead → CTO',
-          description: "Cuatro años en esta plataforma de pagos. Como Data Scientist construí el data warehouse y el sistema de ETLs que redujo tiempos de carga en 85% y lancé la detección de fraude en tiempo real (<300ms). Como Data & Analytics Lead fundé el área de datos y analítica desde cero — estructura, procesos, equipo de 4 — y lideré el roadmap de IA (investigación con transformers en IEEE, chatbot multiagente, repositorio estándar MLOps, clasificadores SII/SAT). Como CTO ahora soy responsable de toda la estrategia tecnológica en una organización de 25 personas.",
+        flowCto: {
+          title: 'CTO',
+          period: 'FlowPagos · Jul 2025 — Presente',
+          roles: '',
+          description: "Lidero una organización de 25 personas que abarca Desarrollo de Software, Infraestructura y Datos y Analítica. Defino el roadmap técnico y alineo las capacidades del equipo con las prioridades del negocio. Asumí el rol después de construir y liderar el área de datos y analítica como Data & Analytics Lead.",
+        },
+        flowLead: {
+          title: 'Data & Analytics Lead',
+          period: 'FlowPagos · Jun 2024 — Jul 2025',
+          roles: '',
+          description: "Fundé el área de datos y analítica desde cero — estructura, procesos y un equipo de 4 personas. Co-autor del paper de IEEE CAI 2025 sobre transformers para detección de fraude. Construí el repositorio estándar de IA (CI/CD en GitLab, AWS CDK, SageMaker, FastAPI, EKS, desarrollo de LLMs con LangChain). Diseñé una arquitectura multiagente para un chatbot empresarial (uso interno y de cara a clientes). Extendí capacidades de ML con clasificadores de giro SII (Chile) y código SAT (México), y automatizaciones de Jira con LLMs.",
+        },
+        flowDs: {
+          title: 'Data Scientist',
+          period: 'FlowPagos · Jun 2022 — May 2024',
+          roles: '',
+          description: "Construí el data warehouse con carga incremental end-to-end — redujo tiempos y costos de carga en 85%, manejando millones de registros transaccionales. Lancé el modelo de detección de fraude en tiempo real (<300ms, end-to-end hasta producción). Lideré el diseño e implementación de la plataforma de BI, incluyendo monitoreo de calidad de datos y de uso de paneles. Construí el clasificador de MCC para onboarding de comercios y el generador de código de ETLs para AWS Glue.",
         },
         consulting: {
           title: 'Consultoría MLOps',
-          period: 'Ene 2025 - Jul 2025',
+          period: 'Freelance · Ene 2025 — Jul 2025',
           roles: 'Consultor Independiente',
           description: 'Diseñé e implementé pipelines de MLOps en AWS SageMaker, automatizando el ciclo completo: preprocesamiento, entrenamiento, evaluación, despliegue y monitoreo de modelos.',
         },
         codelco: {
           title: 'Codelco',
-          period: '2020 · 2021 - 2022',
+          period: '2020 · 2021 — 2022',
           roles: 'Práctica Profesional y Memoria',
           description: "Práctica (2020): implementé los primeros paneles de BI de la división — usados en reuniones diarias de análisis — y capacité a más de 20 trabajadores en Power BI. Memoria (2021-2022): construí una red neuronal que predecía el tratamiento efectivo del Molino SAG con 1 hora de anticipación, logrando un MAPE de 4.38% en el conjunto de pruebas — ML aplicado a datos de operaciones mineras.",
         },
         university: {
           title: 'Universidad UTFSM',
-          period: '2017 - 2022',
+          period: '2017 — 2022',
           roles: 'Ingeniería Civil Informática',
           description: 'Ingeniería Civil Informática. Co-fundé la iniciativa DataLab — una propuesta de laboratorio de data science e IA que obtuvo financiamiento UTFSM-Scotiabank y se implementó en ambos campus. Ayudante de laboratorio del curso de Bases de Datos (modelos de datos, normalización, SQL, desarrollo web, optimización de queries, contribuí al gitbook oficial). Ayudante de investigación en un proyecto de mejora del currículum de informática. Diplomado en Dirección de Proyectos de TI con beca.',
         },

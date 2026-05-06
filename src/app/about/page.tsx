@@ -27,7 +27,9 @@ export default function AboutPage() {
   } as const;
 
   const careerSteps = [
-    { key: 'flow', iconPath: PATHS.chartBar },
+    { key: 'flowCto', iconPath: PATHS.chartBar },
+    { key: 'flowLead', iconPath: PATHS.chartBar },
+    { key: 'flowDs', iconPath: PATHS.chartBar },
     { key: 'consulting', iconPath: PATHS.briefcase },
     { key: 'codelco', iconPath: PATHS.building },
     { key: 'university', iconPath: PATHS.academicCap },
@@ -166,9 +168,11 @@ export default function AboutPage() {
                         {t.about.career[key].period}
                       </span>
                     </div>
-                    <p className="mb-3 text-sm font-medium text-[var(--accent-secondary)]">
-                      {t.about.career[key].roles}
-                    </p>
+                    {t.about.career[key].roles && (
+                      <p className="mb-3 text-sm font-medium text-[var(--accent-secondary)]">
+                        {t.about.career[key].roles}
+                      </p>
+                    )}
                     <p className="text-sm leading-relaxed text-[var(--foreground-muted)]">
                       {t.about.career[key].description}
                     </p>
@@ -192,6 +196,17 @@ export default function AboutPage() {
           <p className="leading-relaxed text-[var(--foreground-muted)]">
             {t.about.ieeeContent}
           </p>
+          <a
+            href="https://ieeexplore.ieee.org/document/11050560"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-[var(--accent-primary)] hover:underline"
+          >
+            {language === 'es' ? 'Leer paper en IEEE Xplore' : 'Read paper on IEEE Xplore'}
+            <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+          </a>
         </section>
 
         {/* University Contributions */}
@@ -199,7 +214,7 @@ export default function AboutPage() {
           <h2 className="animate-fade-in-up mb-10 text-2xl font-semibold text-[var(--foreground)]" style={{ animationDelay: '1200ms' }}>
             {t.about.universityTitle}
           </h2>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-6 sm:grid-cols-2">
             {universityContributions.map(({ key, iconPath }, index) => (
               <div
                 key={key}
