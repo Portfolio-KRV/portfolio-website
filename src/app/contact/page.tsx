@@ -109,7 +109,7 @@ export default function ContactPage() {
         <div className="animate-fade-in delay-600 mt-20 text-center">
           <div className="divider-accent mb-8" />
           <p className="text-sm text-[var(--foreground-muted)]">
-            Based in <span className="text-[var(--foreground)]">Latin America</span> · Available for remote opportunities
+            Based in <span className="text-[var(--foreground)]">Chile</span> · UTC-4
           </p>
         </div>
       </div>

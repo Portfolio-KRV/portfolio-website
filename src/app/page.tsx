@@ -33,7 +33,6 @@ export default function Home() {
   const liveDemos = projectsData.filter((p) => p.hasDemoAvailable);
 
   const stats = [
-    { value: '4+', label: t.home.yearsExp || 'Years Experience' },
     { value: '25+', label: t.home.teamSize || 'People Led' },
     { value: 'IEEE CAI', label: t.home.published || 'Published' },
   ];
