@@ -233,7 +233,7 @@ export const projectsData: ProjectData[] = [
     technologies: ['TensorFlow', 'Keras', 'NumPy', 'Matplotlib'],
     category: 'generative-models',
     githubUrl: 'https://github.com/Portfolio-KRV/fashion-autoencoder',
-    hasDemoAvailable: false,    coAuthors: ['Diego Quezada'],
+    hasDemoAvailable: true,    coAuthors: ['Diego Quezada'],
     course: { en: 'Neural Networks', es: 'Redes Neuronales' },
   },
   {
@@ -572,7 +572,7 @@ export const projectsData: ProjectData[] = [
     technologies: ['Spacy', 'Scipy', 'Pandas', 'NumPy', 'Matplotlib', 'Seaborn', 'Scikit-learn'],
     category: 'machine-learning',
     githubUrl: 'https://github.com/Portfolio-KRV/dnomads',
-    hasDemoAvailable: true,    coAuthors: ['Fernanda Avendaño', 'Diego Quezada'],
+    hasDemoAvailable: false,    coAuthors: ['Fernanda Avendaño', 'Diego Quezada'],
     course: { en: 'Machine Learning', es: 'Machine Learning' },
   },
   {
