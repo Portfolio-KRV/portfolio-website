@@ -6,7 +6,7 @@ export const SITE_CONFIG = {
   description: 'CTO at FlowPagos. Data Science, Machine Learning, MLOps, and Leadership. Explore my projects and research.',
   url: 'https://kevinreyesv.dev',
   email: 'kevin.reyes@flowpagos.com',
-  linkedin: 'https://linkedin.com/in/kevinreyesv',
+  linkedin: 'https://linkedin.com/in/kevin-reyes-cs',
   github: 'https://github.com/Portfolio-KRV',
 } as const;
 

@@ -28,7 +28,7 @@ export const translations = {
     },
     about: {
       title: 'About Me',
-      intro: "I work at the intersection of data engineering, ML, and team leadership. My background spans building production fraud detection on real transactional data, designing data warehouses that compressed months of legacy work, and leading the technical roadmap of a 25-person organization. I'm drawn to systems-level questions: how data flows shape decisions, how teams compound over time, what makes infrastructure quietly reliable.",
+      intro: "I work at the intersection of data engineering, ML, and team leadership. My background spans building production fraud detection on real transactional data, designing data warehouses that compressed months of legacy work, and leading the technical roadmap of a 25-person organization. I'm drawn to systems-level questions: how data flows shape decisions, how teams compound over time, what keeps a platform — software, data, and infrastructure — quietly reliable.",
       hook: "From the first BI dashboards at a mining division to presenting transformer research at IEEE in Silicon Valley — and now leading technology at a payments platform. I work where data, models, and engineering teams meet.",
 
       // Current Role
@@ -197,7 +197,7 @@ export const translations = {
     },
     about: {
       title: 'Sobre Mí',
-      intro: "Trabajo en la intersección de data engineering, ML y liderazgo de equipos. Mi experiencia incluye construir detección de fraude en producción sobre datos transaccionales reales, diseñar data warehouses que comprimieron meses de trabajo legacy, y liderar el roadmap técnico de una organización de 25 personas. Me interesan las preguntas a nivel de sistema: cómo los flujos de datos moldean decisiones, cómo los equipos componen valor en el tiempo, qué hace que la infraestructura sea silenciosamente confiable.",
+      intro: "Trabajo en la intersección de data engineering, ML y liderazgo de equipos. Mi experiencia incluye construir detección de fraude en producción sobre datos transaccionales reales, diseñar data warehouses que comprimieron meses de trabajo legacy, y liderar el roadmap técnico de una organización de 25 personas. Me interesan las preguntas a nivel de sistema: cómo los flujos de datos moldean decisiones, cómo los equipos componen valor en el tiempo, qué hace que una plataforma — software, datos e infraestructura — sea silenciosamente confiable.",
       hook: "Desde los primeros paneles de BI en una división minera hasta presentar investigación con transformers en IEEE en Silicon Valley — y ahora liderando la tecnología en una plataforma de pagos. Trabajo donde se encuentran los datos, los modelos y los equipos de ingeniería.",
 
       // Current Role

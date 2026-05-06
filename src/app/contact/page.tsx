@@ -24,7 +24,7 @@ export default function ContactPage() {
     },
     {
       name: t.contact.linkedin,
-      value: 'linkedin.com/in/kevinreyesv',
+      value: 'linkedin.com/in/kevin-reyes-cs',
       href: SITE_CONFIG.linkedin,
       icon: (
         <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
