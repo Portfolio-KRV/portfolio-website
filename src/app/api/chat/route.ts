@@ -18,6 +18,7 @@ import { NextRequest } from 'next/server';
 import { z } from 'zod';
 import { buildSystemPrompt } from '@/lib/chatbot/system-prompt';
 import { checkRateLimit } from '@/lib/chatbot/rate-limit';
+import { logChat } from '@/lib/chatbot/db';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
@@ -109,9 +110,11 @@ export async function POST(req: NextRequest) {
   }
 
   const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+  const userAgent = req.headers.get('user-agent');
 
   const stream = new ReadableStream<Uint8Array>({
     async start(controller) {
+      let assistantText = '';
       try {
         const apiStream = client.messages.stream({
           model: MODEL,
@@ -121,26 +124,43 @@ export async function POST(req: NextRequest) {
         });
 
         apiStream.on('text', (delta) => {
+          assistantText += delta;
           controller.enqueue(sseEncode({ type: 'text', text: delta }));
         });
 
         const finalMessage = await apiStream.finalMessage();
 
+        const usage = {
+          input_tokens: finalMessage.usage.input_tokens,
+          output_tokens: finalMessage.usage.output_tokens,
+          cache_read_input_tokens:
+            finalMessage.usage.cache_read_input_tokens ?? 0,
+          cache_creation_input_tokens:
+            finalMessage.usage.cache_creation_input_tokens ?? 0,
+        };
+
         controller.enqueue(
           sseEncode({
             type: 'done',
             stop_reason: finalMessage.stop_reason,
-            usage: {
-              input_tokens: finalMessage.usage.input_tokens,
-              output_tokens: finalMessage.usage.output_tokens,
-              cache_read_input_tokens:
-                finalMessage.usage.cache_read_input_tokens ?? 0,
-              cache_creation_input_tokens:
-                finalMessage.usage.cache_creation_input_tokens ?? 0,
-            },
+            usage,
           }),
         );
         controller.close();
+
+        // Persist the conversation. logChat is best-effort and silently
+        // skips if DATABASE_URL/IP_HASH_SALT are unset.
+        await logChat({
+          ip,
+          language: null,
+          messages: [
+            ...messages,
+            { role: 'assistant' as const, content: assistantText },
+          ],
+          usage,
+          stop_reason: finalMessage.stop_reason,
+          user_agent: userAgent,
+        });
       } catch (error) {
         const message =
           error instanceof Anthropic.APIError

@@ -85,6 +85,7 @@ interface UiLabels {
   errorNetwork: string;
   poweredByPrefix: string;
   poweredByLink: string;
+  privacyNote: string;
   earlierConversation: string;
   thinking: string;
 }
@@ -120,6 +121,7 @@ const LABELS: Record<'en' | 'es', UiLabels> = {
     errorNetwork: 'Connection issue. Check your network and try again.',
     poweredByPrefix: 'Powered by',
     poweredByLink: 'Claude',
+    privacyNote: 'Conversations may be saved and analyzed to improve this assistant.',
     earlierConversation: 'Earlier conversation',
     thinking: 'Thinking…',
   },
@@ -153,6 +155,7 @@ const LABELS: Record<'en' | 'es', UiLabels> = {
     errorNetwork: 'Problema de conexión. Verifica tu red e intenta de nuevo.',
     poweredByPrefix: 'Construido con',
     poweredByLink: 'Claude',
+    privacyNote: 'Las conversaciones pueden guardarse y analizarse para mejorar este asistente.',
     earlierConversation: 'Conversación anterior',
     thinking: 'Pensando…',
   },
@@ -777,6 +780,9 @@ export function ChatWidget() {
                 <span>{input.length}/{INPUT_LIMIT}</span>
               )}
             </div>
+            <p className="mt-1 text-center text-[10px] leading-snug text-[var(--foreground-muted)]/70">
+              {labels.privacyNote}
+            </p>
           </div>
         </div>
       )}
