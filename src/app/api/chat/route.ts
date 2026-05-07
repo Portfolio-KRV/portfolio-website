@@ -17,7 +17,7 @@ import Anthropic from '@anthropic-ai/sdk';
 import { NextRequest } from 'next/server';
 import { z } from 'zod';
 import { buildSystemPrompt } from '@/lib/chatbot/system-prompt';
-import { checkRateLimit } from '@/lib/chatbot/rate-limit';
+import { checkRateLimit, checkDailyLimit } from '@/lib/chatbot/rate-limit';
 import { logChat } from '@/lib/chatbot/db';
 
 export const runtime = 'nodejs';
@@ -45,6 +45,39 @@ function getClientIp(req: NextRequest): string {
   return 'unknown';
 }
 
+// Allow only requests originating from our own site. Doesn't stop a
+// determined attacker calling from curl/Node (they can spoof the header),
+// but blocks the easy case of a third-party browser script abusing the
+// endpoint while users browse another site.
+const ALLOWED_ORIGINS = new Set([
+  'https://kevinreyesv.dev',
+  'https://www.kevinreyesv.dev',
+]);
+const ALLOWED_ORIGIN_PATTERNS = [/^https:\/\/[a-z0-9-]+\.vercel\.app$/];
+
+function isAllowedOrigin(req: NextRequest): boolean {
+  if (process.env.NODE_ENV === 'development') return true;
+  const origin = req.headers.get('origin');
+  if (origin) {
+    if (ALLOWED_ORIGINS.has(origin)) return true;
+    return ALLOWED_ORIGIN_PATTERNS.some((p) => p.test(origin));
+  }
+  // Some browsers/transports omit Origin on same-origin requests; fall
+  // back to Referer with a host check.
+  const referer = req.headers.get('referer');
+  if (referer) {
+    try {
+      const url = new URL(referer);
+      const refOrigin = `${url.protocol}//${url.host}`;
+      if (ALLOWED_ORIGINS.has(refOrigin)) return true;
+      return ALLOWED_ORIGIN_PATTERNS.some((p) => p.test(refOrigin));
+    } catch {
+      return false;
+    }
+  }
+  return false;
+}
+
 function sseEncode(data: unknown): Uint8Array {
   return new TextEncoder().encode(`data: ${JSON.stringify(data)}\n\n`);
 }
@@ -57,6 +90,15 @@ export async function POST(req: NextRequest) {
     );
   }
 
+  // Layer 0: only accept requests from the site itself or Vercel previews.
+  if (!isAllowedOrigin(req)) {
+    return new Response(
+      JSON.stringify({ error: 'Forbidden.' }),
+      { status: 403, headers: { 'Content-Type': 'application/json' } },
+    );
+  }
+
+  // Layer 1: per-IP rate limit (in-memory, cheap, stops casual hammering).
   const ip = getClientIp(req);
   const limit = checkRateLimit(ip);
   if (!limit.allowed) {
@@ -71,6 +113,23 @@ export async function POST(req: NextRequest) {
         headers: {
           'Content-Type': 'application/json',
           'Retry-After': String(retryAfter),
+        },
+      },
+    );
+  }
+
+  // Layer 2: global daily cap (Postgres-backed, cold-start safe).
+  const daily = await checkDailyLimit();
+  if (!daily.allowed) {
+    return new Response(
+      JSON.stringify({
+        error: 'Daily request limit reached. Please try again tomorrow.',
+      }),
+      {
+        status: 503,
+        headers: {
+          'Content-Type': 'application/json',
+          'Retry-After': '3600',
         },
       },
     );
