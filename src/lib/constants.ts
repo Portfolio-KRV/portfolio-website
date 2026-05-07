@@ -22,33 +22,39 @@ export const CATEGORY_COLORS: Record<ProjectCategory, string> = {
   'recommendation-systems': 'badge-machine-learning',
 } as const;
 
-export const TECH_STACK = [
-  'Python',
-  'AWS',
-  'TensorFlow',
-  'PyTorch',
-  'SQL',
-] as const;
+export type SkillCategory =
+  | 'languages'
+  | 'mlDl'
+  | 'cloudMlops'
+  | 'dataBi'
+  | 'llmsAgents';
 
-export const SKILLS = [
-  'Python',
-  'SQL',
-  'AWS',
-  'TensorFlow',
-  'Keras',
-  'PyTorch',
-  'Scikit-learn',
-  'Pandas',
-  'NumPy',
-  'SageMaker',
-  'Glue',
-  'Redshift',
-  'Power BI',
-  'MLOps',
-  'CI/CD',
-  'Docker',
-  'FastAPI',
-  'LangChain',
+export interface SkillGroup {
+  category: SkillCategory;
+  skills: readonly string[];
+}
+
+export const SKILL_GROUPS: readonly SkillGroup[] = [
+  {
+    category: 'languages',
+    skills: ['Python', 'SQL'],
+  },
+  {
+    category: 'mlDl',
+    skills: ['TensorFlow', 'PyTorch', 'Keras', 'Scikit-learn', 'Pandas', 'NumPy'],
+  },
+  {
+    category: 'cloudMlops',
+    skills: ['AWS', 'SageMaker', 'Glue', 'Redshift', 'EKS', 'Docker', 'CI/CD', 'FastAPI'],
+  },
+  {
+    category: 'dataBi',
+    skills: ['Power BI', 'ETL', 'Data Warehousing'],
+  },
+  {
+    category: 'llmsAgents',
+    skills: ['LangChain', 'RAG', 'Multi-agent architectures', 'Prompt engineering'],
+  },
 ] as const;
 
 export const VALID_LANGUAGES = ['en', 'es'] as const;

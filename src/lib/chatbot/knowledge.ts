@@ -16,9 +16,9 @@ export const KNOWLEDGE_BASE = `
 
 ## IDENTITY / IDENTIDAD
 
-EN: Kevin Reyes is a Chilean technologist working at the intersection of data engineering, machine learning, and engineering leadership. He is currently CTO at FlowPagos, a payments platform, where he leads a 25-person organization across Software Development, Infrastructure, and Data & Analytics.
+EN: Kevin Reyes is a Chilean technologist working at the intersection of data engineering, machine learning, and engineering leadership. He is currently CTO at FlowPagos, a payments platform, where he leads three technology teams — Software Development, Infrastructure, and Data & Analytics — totaling 25+ people.
 
-ES: Kevin Reyes es un tecnólogo chileno que trabaja en la intersección de data engineering, machine learning y liderazgo de ingeniería. Actualmente es CTO en FlowPagos, una plataforma de pagos, donde lidera una organización de 25 personas que abarca Desarrollo de Software, Infraestructura y Datos y Analítica.
+ES: Kevin Reyes es un tecnólogo chileno que trabaja en la intersección de data engineering, machine learning y liderazgo de ingeniería. Actualmente es CTO en FlowPagos, una plataforma de pagos, donde lidera tres equipos de tecnología — Desarrollo de Software, Infraestructura y Datos y Analítica — sumando 25+ personas.
 
 Location / Ubicación: Chile.
 Languages / Idiomas: Spanish (native), English (professional).
@@ -29,9 +29,9 @@ Languages / Idiomas: Spanish (native), English (professional).
 
 ### CTO at FlowPagos (Jul 2025 — Present / Presente)
 
-EN: Leads a 25-person organization across Software Development, Infrastructure, and Data & Analytics. Owns the technical roadmap and aligns it with business priorities. Stepped into the role after building and leading the data and analytics area as Data & Analytics Lead.
+EN: Leads three technology teams — Software Development, Infrastructure, and Data & Analytics — totaling 25+ people. Owns the technical roadmap and aligns it with business priorities. Stepped into the role after building and leading the data and analytics area as Data & Analytics Lead.
 
-ES: Lidera una organización de 25 personas que abarca Desarrollo de Software, Infraestructura y Datos y Analítica. Es dueño del roadmap técnico y lo alinea con las prioridades del negocio. Asumió el rol después de construir y liderar el área de datos y analítica como Data & Analytics Lead.
+ES: Lidera tres equipos de tecnología — Desarrollo de Software, Infraestructura y Datos y Analítica — sumando 25+ personas. Es dueño del roadmap técnico y lo alinea con las prioridades del negocio. Asumió el rol después de construir y liderar el área de datos y analítica como Data & Analytics Lead.
 
 ### Data & Analytics Lead at FlowPagos (Jun 2024 — Jul 2025)
 
@@ -81,7 +81,7 @@ EN:
 - **Multi-agent Chatbot Architecture**: designed for an enterprise customer-facing chatbot with multiple functionalities.
 - **MCC Classifier**: streamlined merchant onboarding; later expanded to SII (Chile) and SAT (Mexico) codes.
 - **IEEE Paper**: co-authored "Transformers for Fraud Detection: Temporal Positional Encoding" — accepted at IEEE CAI 2025, presented in Silicon Valley.
-- **Team Leadership**: led 4-person team as Data & Analytics Lead; now leads a 25-person organization as CTO.
+- **Team Leadership**: led 4-person team as Data & Analytics Lead; now leads three technology teams (25+ people in total) as CTO.
 
 ES:
 - **Data Warehouse**: 85% de reducción en tiempos y costos de carga en FlowPagos. DW completo con nuevo modelo de datos, ETLs y carga incremental end-to-end. Incluye generador de código de ETLs para AWS Glue.
@@ -91,13 +91,13 @@ ES:
 - **Arquitectura Multi-agente**: chatbot empresarial de cara a clientes con múltiples funcionalidades.
 - **Clasificador MCC**: agilizó onboarding de comercios; luego extendido a giro SII (Chile) y código SAT (México).
 - **Paper IEEE**: co-autor de "Transformers for Fraud Detection: Temporal Positional Encoding" — aceptado en IEEE CAI 2025, presentado en Silicon Valley.
-- **Liderazgo de Equipos**: lideró equipo de 4 personas como Data & Analytics Lead; ahora lidera organización de 25 personas como CTO.
+- **Liderazgo de Equipos**: lideró equipo de 4 personas como Data & Analytics Lead; ahora lidera tres equipos de tecnología (25+ personas en total) como CTO.
 
 ---
 
 ## TECHNICAL SKILLS / SKILLS TÉCNICOS
 
-- **Languages / Lenguajes**: Python, SQL, TypeScript/JavaScript.
+- **Languages / Lenguajes**: Python, SQL.
 - **ML / DL**: TensorFlow, PyTorch, scikit-learn, transformers, anomaly detection, transfer learning, attention mechanisms.
 - **Data Engineering**: AWS Glue, ETLs, data warehousing, incremental loading, data quality monitoring.
 - **Cloud & MLOps**: AWS (SageMaker, CDK, EKS, Lambda), Docker, GitLab CI/CD, FastAPI.
@@ -188,8 +188,8 @@ ES: Es CTO en FlowPagos y no está buscando activamente. Está abierto a consult
 EN/ES: Chile.
 
 **Q: What's his strongest skill? / ¿Cuál es su skill más fuerte?**
-EN: He works at the intersection of three areas — data engineering, ML/AI, and engineering leadership. The combination is what's distinctive: he's shipped production fraud detection AND built data warehouses AND now runs a 25-person org. Most people specialize in one of these; he operates across all three.
-ES: Trabaja en la intersección de tres áreas — data engineering, ML/IA y liderazgo de ingeniería. La combinación es lo distintivo: ha lanzado detección de fraude en producción Y construido data warehouses Y ahora dirige una organización de 25 personas. La mayoría se especializa en una de estas; él opera en las tres.
+EN: He works at the intersection of three areas — data engineering, ML/AI, and engineering leadership. The combination is what's distinctive: he's shipped production fraud detection AND built data warehouses AND now runs an engineering org of 25+ people across three teams. Most people specialize in one of these; he operates across all three.
+ES: Trabaja en la intersección de tres áreas — data engineering, ML/IA y liderazgo de ingeniería. La combinación es lo distintivo: ha lanzado detección de fraude en producción Y construido data warehouses Y ahora dirige una gerencia de tecnología de 25+ personas en tres equipos. La mayoría se especializa en una de estas; él opera en las tres.
 
 **Q: Can I see his production code? / ¿Puedo ver su código de producción?**
 EN: No — production work at FlowPagos (fraud models, DW, MLOps pipelines) is confidential. The portfolio shows academic projects that demonstrate the techniques. For production-relevant questions, LinkedIn is the path.

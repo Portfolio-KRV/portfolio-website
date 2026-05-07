@@ -5,8 +5,6 @@ import { useState } from 'react';
 import { useI18n } from '@/lib/i18n-context';
 import { projectsData } from '@/lib/projects';
 
-const techStack = ['Python', 'TensorFlow', 'PyTorch', 'AWS', 'SageMaker', 'SQL', 'Docker', 'MLOps'];
-
 function DemoThumb({ slug }: { slug: string }) {
   const [extension, setExtension] = useState<'gif' | 'png' | 'none'>('gif');
 
@@ -89,7 +87,7 @@ export default function Home() {
 
       {/* Live demos strip */}
       {liveDemos.length > 0 && (
-        <section className="px-4 pb-20" aria-labelledby="home-live-demos">
+        <section className="px-4 pb-24" aria-labelledby="home-live-demos">
           <div className="mx-auto max-w-7xl">
             <div className="mb-8 flex flex-col gap-3 border-b border-[var(--border)] pb-5 sm:flex-row sm:items-end sm:justify-between sm:gap-6">
               <div>
@@ -159,22 +157,6 @@ export default function Home() {
           </div>
         </section>
       )}
-
-      {/* Tech stack — discreet footer row */}
-      <section className="px-4 pb-24">
-        <div className="mx-auto max-w-3xl text-center">
-          <p className="mb-4 text-xs font-medium uppercase tracking-[0.2em] text-[var(--foreground-muted)]">
-            {t.home.techStack || 'Technical Expertise'}
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-2">
-            {techStack.map((tech) => (
-              <span key={tech} className="tech-tag text-xs">
-                {tech}
-              </span>
-            ))}
-          </div>
-        </div>
-      </section>
     </div>
   );
 }

@@ -67,7 +67,7 @@ export default function PublicationsPage() {
               <span className="flex h-8 w-8 items-center justify-center rounded-full border border-[var(--accent-primary)] text-xs font-semibold text-[var(--accent-primary)]">
                 KR
               </span>
-              Kevin Reyes, et al.
+              Kevin Reyes & Vasco Cortez
             </span>
             <span className="text-sm text-[var(--foreground-muted)]">{t.publications.ieeeVenue}</span>
           </div>

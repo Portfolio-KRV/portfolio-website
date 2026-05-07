@@ -1,7 +1,7 @@
 'use client';
 
 import { useI18n } from '@/lib/i18n-context';
-import { SKILLS } from '@/lib/constants';
+import { SKILL_GROUPS } from '@/lib/constants';
 
 export default function AboutPage() {
   const { t, language } = useI18n();
@@ -177,17 +177,26 @@ export default function AboutPage() {
         {/* Skills */}
         <section className="animate-fade-in" style={{ animationDelay: '1400ms' }}>
           <h2 className="mb-8 text-2xl font-semibold text-[var(--foreground)]">
-            {language === 'es' ? 'Habilidades Técnicas' : 'Technical Skills'}
+            {t.about.skillsTitle}
           </h2>
-          <div className="flex flex-wrap gap-3">
-            {SKILLS.map((skill, index) => (
-              <span
-                key={skill}
-                className="tech-tag animate-scale-in"
-                style={{ animationDelay: `${1450 + index * 30}ms` }}
+          <div className="flex flex-col gap-6">
+            {SKILL_GROUPS.map((group, gi) => (
+              <div
+                key={group.category}
+                className="animate-fade-in-up"
+                style={{ animationDelay: `${1450 + gi * 80}ms` }}
               >
-                {skill}
-              </span>
+                <h3 className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-[var(--foreground-muted)]">
+                  {t.about.skillCategories[group.category]}
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  {group.skills.map((skill) => (
+                    <span key={skill} className="tech-tag">
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
             ))}
           </div>
         </section>
