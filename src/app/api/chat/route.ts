@@ -53,7 +53,11 @@ const ALLOWED_ORIGINS = new Set([
   'https://kevinreyesv.dev',
   'https://www.kevinreyesv.dev',
 ]);
-const ALLOWED_ORIGIN_PATTERNS = [/^https:\/\/[a-z0-9-]+\.vercel\.app$/];
+// Only Vercel previews of THIS project pass — without the project prefix
+// any *.vercel.app subdomain (incl. ones an attacker creates) would match.
+const ALLOWED_ORIGIN_PATTERNS = [
+  /^https:\/\/portfolio-website-[a-z0-9-]+\.vercel\.app$/,
+];
 
 function isAllowedOrigin(req: NextRequest): boolean {
   if (process.env.NODE_ENV === 'development') return true;
