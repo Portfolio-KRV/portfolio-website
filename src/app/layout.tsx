@@ -112,6 +112,8 @@ export default function RootLayout({
               {children}
             </main>
             <Footer />
+            {/* Spacer so the floating chat button never overlaps footer content on mobile */}
+            <div aria-hidden="true" className="h-20 sm:h-0" />
           </div>
           <ChatWidget />
         </Providers>
