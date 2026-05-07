@@ -36,6 +36,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# OG image generator — fonts cached locally
+.fonts
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
