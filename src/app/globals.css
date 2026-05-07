@@ -185,6 +185,20 @@ body {
   }
 }
 
+@keyframes chat-dot-bounce {
+  0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+  30% { transform: translateY(-4px); opacity: 1; }
+}
+
+.chat-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 9999px;
+  background: currentColor;
+  animation: chat-dot-bounce 1.2s ease-in-out infinite;
+}
+
 .animate-fade-in-up {
   animation: fade-in-up 0.4s ease forwards;
   opacity: 0;

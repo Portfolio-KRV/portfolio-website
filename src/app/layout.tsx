@@ -4,6 +4,7 @@ import './globals.css';
 import { Providers } from './providers';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
+import { ChatWidget } from '@/components/ChatWidget';
 import { SITE_CONFIG } from '@/lib/constants';
 import { Analytics } from '@vercel/analytics/next';
 
@@ -113,6 +114,7 @@ export default function RootLayout({
             </main>
             <Footer />
           </div>
+          <ChatWidget />
         </Providers>
         <Analytics />
       </body>
