@@ -28,7 +28,7 @@ export const translations = {
     },
     about: {
       title: 'About Me',
-      intro: "I work at the intersection of data engineering, ML, and team leadership. My background spans building production fraud detection on real transactional data and designing data warehouses that compressed months of legacy work — and I now lead the engineering org at a payments platform. I'm drawn to systems-level questions: how data flows shape decisions, how teams compound over time, what keeps a platform — software, data, and infrastructure — quietly reliable.",
+      intro: "I work across data engineering, ML, and team leadership. My background spans building production fraud detection on real transactional data and designing data warehouses that replaced months of legacy work — and I now lead the engineering org at a payments platform. I'm drawn to systems-level questions: how data flows shape decisions, how teams compound over time, what keeps a platform — software, data, and infrastructure — quietly reliable.",
       hook: "Started with BI dashboards in copper mining as a student intern. Now I co-author transformer research at IEEE and lead the engineering org of a payments platform.",
 
       // Current Role
@@ -39,7 +39,7 @@ export const translations = {
       achievements: 'Key Achievements',
       dataEngineering: {
         title: 'Data Warehouse & ETL Architecture',
-        content: "Built a complete data warehouse with a new data model and end-to-end incremental loading — cut data loading time and costs by 85% while expanding the scope of data handled. The DW covers the main business data domains and consolidates information across different databases and platforms. I also built an ETL code generator for AWS Glue that templated common patterns and accelerated new ETL development.",
+        content: "Built a complete data warehouse with a new data model and end-to-end incremental loading — cut data loading time and costs by 85% while expanding the scope of data handled. The DW covers the main business data domains and consolidates information across different databases and platforms. I also built an ETL code generator for AWS Glue that standardized common patterns and accelerated new ETL development.",
       },
       bi: {
         title: 'Business Intelligence Platform',
@@ -51,7 +51,7 @@ export const translations = {
       },
       mlops: {
         title: 'MLOps & Development Standards',
-        content: "Built a standard repository for AI projects: GitLab CI/CD with Jira approval gates, quality tests, static analysis, and automated AWS deploys via CDK. Ships with reference scaffolds — SageMaker pipelines, FastAPI/SageMaker endpoints, EKS deployment, pre-commit checks, and infrastructure as code — plus a LangChain LLM template. Standardizes the team's path from prototype to production.",
+        content: "Built a standard repository for AI projects: GitLab CI/CD with Jira approval gates, quality tests, static analysis, and automated AWS deploys via CDK. Includes reference scaffolds — SageMaker pipelines, FastAPI/SageMaker endpoints, EKS deployment, pre-commit checks, and infrastructure as code — plus a LangChain LLM template. Standardizes the team's path from prototype to production.",
       },
       leadership: {
         title: 'Team & Area Leadership',
@@ -64,7 +64,7 @@ export const translations = {
 
       // What drives me
       drivesTitle: 'What Drives Me',
-      drives: "What keeps pulling me is depth and breadth at the same time. The year I'm tuning a transformer for fraud detection is also the year I'm reorganizing how a team prioritizes its quarter. The two muscles feed each other: engineering taste sharpens leadership decisions, and operational reality sharpens the technical ones.",
+      drives: "What drives me is depth and breadth at the same time. The year I'm tuning a transformer for fraud detection is also the year I'm reorganizing how a team prioritizes its quarter. The two muscles feed each other: engineering taste sharpens leadership decisions, and operational reality sharpens the technical ones.",
 
       // Career Journey
       careerTitle: 'Career Journey',
@@ -213,8 +213,8 @@ export const translations = {
       greeting: 'Hola, soy',
       name: 'Kevin Reyes',
       role: 'CTO en FlowPagos',
-      tagline: 'IA en producción, infraestructura de datos, y los equipos que los sostienen',
-      description: "De Data Scientist lanzando detección de fraude en tiempo real bajo 300ms y un data warehouse que redujo los tiempos de carga en 85%, a Data & Analytics Lead fundando el área de datos y analítica en una plataforma de pagos, a CTO corriendo su estrategia tecnológica — cuatro años y tres roles.",
+      tagline: 'IA en producción, infraestructura de datos, y los equipos detrás',
+      description: "De Data Scientist lanzando un modelo de detección de fraude en tiempo real bajo 300ms y construyendo un data warehouse que redujo los tiempos de carga en 85%, a Data & Analytics Lead fundando el área de datos y analítica en una plataforma de pagos, a CTO liderando su estrategia tecnológica — cuatro años y tres roles.",
       viewProjects: 'Ver Proyectos',
       aboutMe: 'Sobre Mí',
       available: 'Disponible para oportunidades',
@@ -229,18 +229,18 @@ export const translations = {
     },
     about: {
       title: 'Sobre Mí',
-      intro: "Trabajo en la intersección de data engineering, ML y liderazgo de equipos. Mi experiencia incluye construir detección de fraude en producción sobre datos transaccionales reales y diseñar data warehouses que comprimieron meses de trabajo legacy — y ahora lidero la gerencia de tecnología de una plataforma de pagos. Me interesan las preguntas a nivel de sistema: cómo los flujos de datos moldean decisiones, cómo los equipos componen valor en el tiempo, qué hace que una plataforma — software, datos e infraestructura — sea silenciosamente confiable.",
+      intro: "Trabajo en data engineering, ML y liderazgo de equipos. He construido detección de fraude en producción sobre datos transaccionales reales y diseñado data warehouses que reemplazaron meses de procesos legacy — y ahora lidero la gerencia de tecnología de una plataforma de pagos. Me interesan las preguntas a nivel de sistema: cómo los flujos de datos moldean decisiones, cómo los equipos acumulan valor con el tiempo, qué hace que una plataforma — software, datos e infraestructura — sea sólida sin hacer ruido.",
       hook: "Empecé con paneles de BI en minería de cobre como practicante. Hoy soy co-autor de investigación con transformers en IEEE y lidero la gerencia de tecnología en una plataforma de pagos.",
 
       // Current Role
       currentRole: 'Rol Actual',
-      currentRoleContent: "CTO en FlowPagos desde julio de 2025. Lidero tres equipos de tecnología — Desarrollo de Software, Infraestructura y Datos y Analítica — sumando 25+ personas. Soy dueño del roadmap técnico y lo alineo con las prioridades del negocio. Asumí el rol después de construir y liderar el área de datos y analítica como Data & Analytics Lead.",
+      currentRoleContent: "CTO en FlowPagos desde julio de 2025. Lidero tres equipos de tecnología — Desarrollo de Software, Infraestructura, y el área de Datos y Analítica — sumando 25+ personas. Soy responsable del roadmap técnico y lo alineo con las prioridades del negocio. Asumí el rol después de crear y liderar el área de datos y analítica como Data & Analytics Lead.",
 
       // Achievements section
       achievements: 'Logros Destacados',
       dataEngineering: {
         title: 'Data Warehouse y Arquitectura ETL',
-        content: "Construí un data warehouse completo con nuevo modelo de datos y carga incremental end-to-end — redujo tiempos y costos de carga en 85% mientras se ampliaba el alcance de datos manejados. El DW abarca los principales dominios de datos del negocio y consolida información de distintas bases de datos y plataformas. También construí un generador de código de ETLs para AWS Glue que estandarizó patrones comunes y aceleró el desarrollo de nuevas ETLs.",
+        content: "Construí un data warehouse completo con nuevo modelo de datos y carga incremental end-to-end — redujo tiempos y costos de carga en 85% mientras ampliaba el volumen de datos manejados. El DW abarca los principales dominios de datos del negocio y consolida información de distintas bases de datos y plataformas. También construí un generador de código de ETLs para AWS Glue que estandarizó patrones comunes y aceleró el desarrollo de nuevas ETLs.",
       },
       bi: {
         title: 'Plataforma de Business Intelligence',
@@ -248,15 +248,15 @@ export const translations = {
       },
       ml: {
         title: 'Machine Learning e IA',
-        content: "Lancé un modelo de detección de fraude transaccional en tiempo real basado en detección de anomalías — bajo 300ms de respuesta, end-to-end desde experimentación a producción (procesamiento real-time y batch, despliegue de endpoint). Construí un clasificador de MCC para agilizar el onboarding de comercios, luego extendido para clasificar giro SII (Chile) y código SAT (México). Diseñé una arquitectura multi-agente para un chatbot empresarial de cara a clientes — sub-agentes especializados por dominio de tarea.",
+        content: "Lancé un modelo de detección de fraude transaccional en tiempo real basado en detección de anomalías — con respuestas bajo 300ms, end-to-end desde experimentación a producción (procesamiento real-time y batch, despliegue de endpoint). Construí un clasificador de MCC para agilizar el onboarding de comercios, luego extendido para clasificar giro SII (Chile) y código SAT (México). Diseñé una arquitectura multi-agente para un chatbot empresarial orientado al cliente final — sub-agentes especializados por tipo de consulta.",
       },
       mlops: {
         title: 'MLOps y Estándares de Desarrollo',
-        content: "Construí un repositorio estándar para proyectos de IA: CI/CD GitLab con verificación de aprobaciones en Jira, tests de calidad, análisis estático y despliegues automatizados a AWS vía AWS CDK. Incluye scaffolds de referencia — pipelines SageMaker, endpoints FastAPI/SageMaker, despliegue EKS, análisis pre-commit, e infraestructura como código — más una plantilla de LLM con LangChain. Estandariza el camino del equipo de prototipo a producción.",
+        content: "Construí un repositorio estándar para proyectos de IA: CI/CD GitLab con verificación de aprobaciones en Jira, tests de calidad, análisis estático y despliegues automatizados a AWS vía AWS CDK. Incluye scaffolds de referencia — pipelines SageMaker, endpoints FastAPI/SageMaker, despliegue EKS, análisis pre-commit, e infraestructura como código — más una plantilla de LLM con LangChain. Estandariza el flujo del equipo desde prototipo hasta producción.",
       },
       leadership: {
         title: 'Liderazgo de Equipos y Áreas',
-        content: "Como Data & Analytics Lead, lideré un equipo de 4 personas en proyectos de ingeniería de datos, BI e IA. Establecí rituales de equipo que generaron cohesión, conduje un proceso de feedback trimestral estandarizado, y lideré contrataciones. También construí automatizaciones de Jira usando LLMs — generando automáticamente descripciones estandarizadas para distintos tipos de requerimiento — para mantener consistencia en la gestión de proyectos.",
+        content: "Como Data & Analytics Lead, lideré un equipo de 4 personas en proyectos de ingeniería de datos, BI e IA. Establecí rituales de equipo que dieron cohesión, implementé un proceso de feedback trimestral estandarizado, y lideré contrataciones. También construí automatizaciones de Jira usando LLMs — generando automáticamente descripciones estandarizadas para distintos tipos de requerimiento — para mantener consistencia en la gestión de proyectos.",
       },
 
       // My Approach section
@@ -265,7 +265,7 @@ export const translations = {
 
       // What drives me
       drivesTitle: 'Lo que Me Motiva',
-      drives: "Lo que me sigue moviendo es la profundidad y la amplitud al mismo tiempo. El año que ajusto un transformer para detección de fraude es también el año que reorganizo cómo un equipo prioriza su trimestre. Los dos músculos se alimentan: el criterio de ingeniería afila las decisiones de liderazgo, y la realidad operacional afila las técnicas.",
+      drives: "Lo que me motiva es la profundidad y la amplitud al mismo tiempo. El año que ajusto un transformer para detección de fraude es también el año que reorganizo cómo un equipo prioriza su trimestre. Los dos músculos se alimentan: el criterio de ingeniería afila las decisiones de liderazgo, y la realidad operacional afila las técnicas.",
 
       // Career Journey
       careerTitle: 'Trayectoria Profesional',
@@ -274,13 +274,13 @@ export const translations = {
           title: 'CTO',
           period: 'FlowPagos · Jul 2025 — Presente',
           roles: '',
-          description: "Lidero tres equipos de tecnología (Desarrollo de Software, Infraestructura, Datos y Analítica) — 25+ personas en total. Defino el roadmap técnico y alineo las capacidades del equipo con las prioridades del negocio. Asumí el rol después de construir y liderar el área de datos y analítica como Data & Analytics Lead.",
+          description: "Lidero tres equipos de tecnología (Desarrollo de Software, Infraestructura, y Datos y Analítica) — 25+ personas en total. Defino el roadmap técnico y alineo las capacidades del equipo con las prioridades del negocio. Asumí el rol después de crear y liderar el área de datos y analítica como Data & Analytics Lead.",
         },
         flowLead: {
           title: 'Data & Analytics Lead',
           period: 'FlowPagos · Jun 2024 — Jul 2025',
           roles: '',
-          description: "Fundé el área de datos y analítica desde cero — estructura, procesos y un equipo de 4 personas. Co-autor del paper de IEEE CAI 2025 sobre transformers para detección de fraude. Construí el repositorio estándar de IA (CI/CD en GitLab, AWS CDK, SageMaker, FastAPI, EKS, desarrollo de LLMs con LangChain). Diseñé una arquitectura multiagente para un chatbot empresarial (uso interno y de cara a clientes). Extendí capacidades de ML con clasificadores de giro SII (Chile) y código SAT (México), y automatizaciones de Jira con LLMs.",
+          description: "Fundé el área de datos y analítica desde cero — estructura, procesos y un equipo de 4 personas. Co-autor del paper de IEEE CAI 2025 sobre transformers para detección de fraude. Construí el repositorio estándar de IA (CI/CD en GitLab, AWS CDK, SageMaker, FastAPI, EKS, desarrollo de LLMs con LangChain). Diseñé una arquitectura multiagente para un chatbot empresarial (uso interno y orientado al cliente final). Extendí capacidades de ML con clasificadores de giro SII (Chile) y código SAT (México), y automatizaciones de Jira con LLMs.",
         },
         flowDs: {
           title: 'Data Scientist',
@@ -330,7 +330,7 @@ export const translations = {
       },
       softwareExpo: {
         title: '1er Lugar — Exposición de Software',
-        content: "Lideré un equipo al 1er lugar entre 10 equipos en la XXIX Exposición de Software de la UTFSM (competencia anual de software de la universidad) — evaluada sobre build, profundidad técnica y presentación.",
+        content: "Lideré un equipo al 1er lugar entre 10 equipos en la XXIX Exposición de Software de la UTFSM (competencia anual de software de la universidad) — evaluada por construcción, profundidad técnica y presentación.",
       },
 
       // IEEE Experience
@@ -379,11 +379,11 @@ export const translations = {
     },
     experience: {
       title: 'Trayectoria',
-      subtitle: 'De Data Scientist en FlowPagos a CTO — y el camino entre medio.',
+      subtitle: 'De Data Scientist en FlowPagos a CTO — y el recorrido entre ambos.',
     },
     publications: {
       title: 'Publicaciones',
-      subtitle: 'Una contribución a conferencias de ML aplicado.',
+      subtitle: 'Una publicación en conferencia de ML aplicado.',
       ieeeTitle: 'Transformers para Detección de Fraude: Codificación Posicional Temporal',
       ieeeDescription: 'Investigación sobre transformers para detección de fraude, proponiendo una modificación al positional encoding para representar distancia temporal entre transacciones. Presentado en IEEE CAI 2025 en Silicon Valley.',
       ieeeVenue: 'IEEE CAI 2025 - Silicon Valley',

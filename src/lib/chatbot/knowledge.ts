@@ -16,9 +16,9 @@ export const KNOWLEDGE_BASE = `
 
 ## IDENTITY / IDENTIDAD
 
-EN: Kevin Reyes is a Chilean technologist working at the intersection of data engineering, machine learning, and engineering leadership. He is currently CTO at FlowPagos, a payments platform, where he leads three technology teams — Software Development, Infrastructure, and Data & Analytics — totaling 25+ people.
+EN: Kevin Reyes is a Chilean technologist working across data engineering, machine learning, and engineering leadership. He is currently CTO at FlowPagos, a payments platform, where he leads three technology teams — Software Development, Infrastructure, and Data & Analytics — totaling 25+ people.
 
-ES: Kevin Reyes es un tecnólogo chileno que trabaja en la intersección de data engineering, machine learning y liderazgo de ingeniería. Actualmente es CTO en FlowPagos, una plataforma de pagos, donde lidera tres equipos de tecnología — Desarrollo de Software, Infraestructura y Datos y Analítica — sumando 25+ personas.
+ES: Kevin Reyes es un tecnólogo chileno que trabaja en data engineering, machine learning y liderazgo de ingeniería. Actualmente es CTO en FlowPagos, una plataforma de pagos, donde lidera tres equipos de tecnología — Desarrollo de Software, Infraestructura, y el área de Datos y Analítica — sumando 25+ personas.
 
 Location / Ubicación: Chile.
 Languages / Idiomas: Spanish (native), English (professional).
@@ -31,13 +31,13 @@ Languages / Idiomas: Spanish (native), English (professional).
 
 EN: Leads three technology teams — Software Development, Infrastructure, and Data & Analytics — totaling 25+ people. Owns the technical roadmap and aligns it with business priorities. Stepped into the role after building and leading the data and analytics area as Data & Analytics Lead.
 
-ES: Lidera tres equipos de tecnología — Desarrollo de Software, Infraestructura y Datos y Analítica — sumando 25+ personas. Es dueño del roadmap técnico y lo alinea con las prioridades del negocio. Asumió el rol después de construir y liderar el área de datos y analítica como Data & Analytics Lead.
+ES: Lidera tres equipos de tecnología — Desarrollo de Software, Infraestructura, y el área de Datos y Analítica — sumando 25+ personas. Es responsable del roadmap técnico y lo alinea con las prioridades del negocio. Asumió el rol después de crear y liderar el área de datos y analítica como Data & Analytics Lead.
 
 ### Data & Analytics Lead at FlowPagos (Jun 2024 — Jul 2025)
 
 EN: Founded the data and analytics area from scratch — structure, processes, and a 4-person team. Co-authored the IEEE CAI 2025 transformer-for-fraud-detection paper. Built the standard AI repository (GitLab CI/CD, AWS CDK, SageMaker, FastAPI, EKS, LLM development with LangChain). Designed a multi-agent architecture for an enterprise chatbot (internal and customer-facing). Extended ML capabilities with SII (Chile) and SAT (Mexico) code classifiers and Jira-LLM automations.
 
-ES: Fundó el área de datos y analítica desde cero — estructura, procesos y un equipo de 4 personas. Co-autor del paper de IEEE CAI 2025 sobre transformers para detección de fraude. Construyó el repositorio estándar de IA (CI/CD en GitLab, AWS CDK, SageMaker, FastAPI, EKS, desarrollo de LLMs con LangChain). Diseñó una arquitectura multiagente para un chatbot empresarial (uso interno y de cara a clientes). Extendió capacidades de ML con clasificadores de giro SII (Chile) y código SAT (México), y automatizaciones de Jira con LLMs.
+ES: Fundó el área de datos y analítica desde cero — estructura, procesos y un equipo de 4 personas. Co-autor del paper de IEEE CAI 2025 sobre transformers para detección de fraude. Construyó el repositorio estándar de IA (CI/CD en GitLab, AWS CDK, SageMaker, FastAPI, EKS, desarrollo de LLMs con LangChain). Diseñó una arquitectura multiagente para un chatbot empresarial (uso interno y orientado al cliente final). Extendió capacidades de ML con clasificadores de giro SII (Chile) y código SAT (México), y automatizaciones de Jira con LLMs.
 
 ### Data Scientist at FlowPagos (Jun 2022 — May 2024)
 
@@ -86,9 +86,9 @@ EN:
 ES:
 - **Data Warehouse**: 85% de reducción en tiempos y costos de carga en FlowPagos. DW completo con nuevo modelo de datos, ETLs y carga incremental end-to-end. Incluye generador de código de ETLs para AWS Glue.
 - **Detección de Fraude en Tiempo Real**: modelo basado en detección de anomalías con tiempos de respuesta <300ms, despliegue end-to-end en producción.
-- **Plataforma BI**: lideró el diseño e implementación de la plataforma de BI de FlowPagos con alta adopción en la toma de decisiones. Construyó paneles de monitoreo de calidad de datos y de uso de paneles.
+- **Plataforma BI**: lideró el diseño e implementación de la plataforma de BI de FlowPagos, ampliamente adoptada en la toma de decisiones. Construyó dos meta-paneles: monitoreo de calidad de datos y monitoreo de uso de paneles.
 - **Estándares MLOps**: repositorio estándar de IA con CI/CD GitLab, AWS CDK, pipelines SageMaker, endpoints FastAPI/SageMaker, despliegue EKS, análisis pre-commit y ejemplos LLM con LangChain.
-- **Arquitectura Multi-agente**: chatbot empresarial de cara a clientes con múltiples funcionalidades.
+- **Arquitectura Multi-agente**: chatbot empresarial orientado al cliente final, con sub-agentes especializados por tipo de consulta.
 - **Clasificador MCC**: agilizó onboarding de comercios; luego extendido a giro SII (Chile) y código SAT (México).
 - **Paper IEEE**: co-autor de "Transformers for Fraud Detection: Temporal Positional Encoding" — aceptado en IEEE CAI 2025, presentado en Silicon Valley.
 - **Liderazgo de Equipos**: lideró equipo de 4 personas como Data & Analytics Lead; ahora lidera tres equipos de tecnología (25+ personas en total) como CTO.
@@ -174,7 +174,7 @@ ES: El canal de contacto preferido es LinkedIn. NO compartas ni menciones su ema
 
 EN: Kevin is open to conversations about interesting projects in data engineering, AI/ML, or technical leadership. He is not actively seeking employment — he's CTO at FlowPagos and committed there. But he's happy to talk about consulting (he ran independent MLOps consulting between Jan-Jul 2025), advisory, partnerships, or interesting collaborations. The way to reach him is LinkedIn (https://linkedin.com/in/kevin-reyes-cs) with specifics about the problem.
 
-ES: Kevin está abierto a conversaciones sobre proyectos interesantes en data engineering, IA/ML o liderazgo técnico. No está buscando trabajo activamente — es CTO en FlowPagos y está comprometido ahí. Pero está disponible para hablar de consultoría (hizo consultoría independiente de MLOps entre enero-julio 2025), advisory, partnerships o colaboraciones interesantes. La forma de contactarlo es por LinkedIn (https://linkedin.com/in/kevin-reyes-cs) con detalles del problema.
+ES: Kevin está abierto a conversaciones sobre proyectos interesantes en data engineering, IA/ML o liderazgo técnico. No está buscando trabajo activamente — es CTO en FlowPagos y está comprometido con esa posición. Pero está disponible para hablar de consultoría (hizo consultoría independiente de MLOps entre enero-julio 2025), advisory, partnerships o colaboraciones interesantes. La forma de contactarlo es por LinkedIn (https://linkedin.com/in/kevin-reyes-cs) con detalles del problema.
 
 ---
 
@@ -188,19 +188,19 @@ ES: Es CTO en FlowPagos y no está buscando activamente. Está abierto a consult
 EN/ES: Chile.
 
 **Q: What's his strongest skill? / ¿Cuál es su skill más fuerte?**
-EN: He works at the intersection of three areas — data engineering, ML/AI, and engineering leadership. The combination is what's distinctive: he's shipped production fraud detection AND built data warehouses AND now runs an engineering org of 25+ people across three teams. Most people specialize in one of these; he operates across all three.
-ES: Trabaja en la intersección de tres áreas — data engineering, ML/IA y liderazgo de ingeniería. La combinación es lo distintivo: ha lanzado detección de fraude en producción Y construido data warehouses Y ahora dirige una gerencia de tecnología de 25+ personas en tres equipos. La mayoría se especializa en una de estas; él opera en las tres.
+EN: He works across three areas — data engineering, ML/AI, and engineering leadership. The combination is what's distinctive: he's shipped production fraud detection AND built data warehouses AND now runs an engineering org of 25+ people across three teams. Most people specialize in one of these; he operates across all three.
+ES: Trabaja en tres áreas — data engineering, ML/IA y liderazgo de ingeniería. La combinación es lo distintivo: ha lanzado detección de fraude en producción, ha construido data warehouses, y ahora dirige una gerencia de tecnología de 25+ personas en tres equipos. La mayoría se especializa en una de estas; él opera en las tres.
 
 **Q: Can I see his production code? / ¿Puedo ver su código de producción?**
 EN: No — production work at FlowPagos (fraud models, DW, MLOps pipelines) is confidential. The portfolio shows academic projects that demonstrate the techniques. For production-relevant questions, LinkedIn is the path.
-ES: No — el trabajo en producción en FlowPagos (modelos de fraude, DW, pipelines MLOps) es confidencial. El portfolio muestra proyectos académicos que demuestran las técnicas. Para preguntas sobre producción, el camino es LinkedIn.
+ES: No — el trabajo en producción en FlowPagos (modelos de fraude, DW, pipelines MLOps) es confidencial. El portfolio muestra proyectos académicos que demuestran las técnicas. Para preguntas sobre producción, el canal correcto es LinkedIn.
 
 **Q: What languages does he speak? / ¿Qué idiomas habla?**
 EN/ES: Spanish (native / nativo), English (professional working proficiency / nivel profesional).
 
 **Q: How do I try the demos? / ¿Cómo pruebo las demos?**
 EN: Click any demo card on the home page or /projects. They run on Hugging Face Spaces — free tier, so first load may take a few seconds to wake up.
-ES: Click en cualquier card de demo en la home o /projects. Corren en Hugging Face Spaces — tier gratuito, así que la primera carga puede demorar unos segundos en despertar.
+ES: Hacé click en cualquier card de demo desde el inicio o /projects. Corren en Hugging Face Spaces — plan gratuito, así que la primera carga puede demorar unos segundos en despertar.
 
 **Q: What's the IEEE paper about? / ¿De qué trata el paper de IEEE?**
 EN: A modification to transformer positional encoding so it represents temporal distance between transactions, not just sequence order. Tested on fraud detection. Co-authored with Vasco Cortez, presented at IEEE CAI 2025 in Silicon Valley.
