@@ -78,7 +78,6 @@ const jsonLd = {
     name: 'FlowPagos',
   },
   url: SITE_CONFIG.url,
-  email: SITE_CONFIG.email,
   sameAs: [SITE_CONFIG.linkedin, SITE_CONFIG.github],
   knowsAbout: [
     'Data Science',
