@@ -1,6 +1,7 @@
 'use client';
 
-import { createContext, useContext, useEffect, useState, type ReactNode } from 'react';
+import { createContext, useContext, useEffect, useSyncExternalStore, type ReactNode } from 'react';
+import { createLocalStorageStore } from './local-storage-store';
 
 type Theme = 'light' | 'dark';
 
@@ -12,51 +13,35 @@ interface ThemeContextType {
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
+const themeStore = createLocalStorageStore<Theme>({
+  key: 'theme',
+  defaultValue: 'light',
+  parse: (raw) => (raw === 'light' || raw === 'dark' ? raw : 'light'),
+  serialize: (v) => v,
+});
+
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [theme, setThemeState] = useState<Theme>('light');
-  const [mounted, setMounted] = useState(false);
+  const theme = useSyncExternalStore(
+    themeStore.subscribe,
+    themeStore.getSnapshot,
+    themeStore.getServerSnapshot,
+  );
 
   useEffect(() => {
-    // Check localStorage first, then system preference
-    const savedTheme = localStorage.getItem('theme') as Theme;
-    if (savedTheme && (savedTheme === 'light' || savedTheme === 'dark')) {
-      setThemeState(savedTheme);
+    const root = document.documentElement;
+    if (theme === 'dark') {
+      root.classList.add('dark');
+    } else {
+      root.classList.remove('dark');
     }
-    setMounted(true);
-  }, []);
-
-  useEffect(() => {
-    if (mounted) {
-      // Update document class and localStorage
-      const root = document.documentElement;
-      if (theme === 'dark') {
-        root.classList.add('dark');
-      } else {
-        root.classList.remove('dark');
-      }
-      localStorage.setItem('theme', theme);
-    }
-  }, [theme, mounted]);
-
-  const setTheme = (newTheme: Theme) => {
-    setThemeState(newTheme);
-  };
+  }, [theme]);
 
   const toggleTheme = () => {
-    setThemeState(prev => prev === 'light' ? 'dark' : 'light');
+    themeStore.set(theme === 'light' ? 'dark' : 'light');
   };
 
-  // Prevent hydration mismatch by rendering with default theme until mounted
-  if (!mounted) {
-    return (
-      <ThemeContext.Provider value={{ theme: 'light', setTheme, toggleTheme }}>
-        {children}
-      </ThemeContext.Provider>
-    );
-  }
-
   return (
-    <ThemeContext.Provider value={{ theme, setTheme, toggleTheme }}>
+    <ThemeContext.Provider value={{ theme, setTheme: themeStore.set, toggleTheme }}>
       {children}
     </ThemeContext.Provider>
   );

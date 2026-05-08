@@ -1,7 +1,8 @@
 'use client';
 
-import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import { createContext, useContext, useEffect, useSyncExternalStore, type ReactNode } from 'react';
 import { translations, Language, TranslationKey } from './translations';
+import { createLocalStorageStore } from './local-storage-store';
 
 interface I18nContextType {
   language: Language;
@@ -11,39 +12,34 @@ interface I18nContextType {
 
 const I18nContext = createContext<I18nContextType | undefined>(undefined);
 
+const languageStore = createLocalStorageStore<Language>({
+  key: 'language',
+  defaultValue: 'en',
+  parse: (raw) => (raw === 'en' || raw === 'es' ? raw : 'en'),
+  serialize: (v) => v,
+});
+
 export function I18nProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguageState] = useState<Language>('en');
-  const [mounted, setMounted] = useState(false);
+  const language = useSyncExternalStore(
+    languageStore.subscribe,
+    languageStore.getSnapshot,
+    languageStore.getServerSnapshot,
+  );
 
+  // Keep <html lang> in sync so screen readers and crawlers see the right
+  // locale. Root layout sets `lang="en"` at build time; this overrides it
+  // client-side once the store settles.
   useEffect(() => {
-    const saved = localStorage.getItem('language') as Language;
-    if (saved && (saved === 'en' || saved === 'es')) {
-      setLanguageState(saved);
-    }
-    setMounted(true);
-  }, []);
+    document.documentElement.lang = language;
+  }, [language]);
 
-  const setLanguage = (lang: Language) => {
-    setLanguageState(lang);
-    localStorage.setItem('language', lang);
+  const value: I18nContextType = {
+    language,
+    setLanguage: languageStore.set,
+    t: translations[language],
   };
 
-  const t = translations[language];
-
-  // Prevent hydration mismatch by not rendering until mounted
-  if (!mounted) {
-    return (
-      <I18nContext.Provider value={{ language: 'en', setLanguage, t: translations.en }}>
-        {children}
-      </I18nContext.Provider>
-    );
-  }
-
-  return (
-    <I18nContext.Provider value={{ language, setLanguage, t }}>
-      {children}
-    </I18nContext.Provider>
-  );
+  return <I18nContext.Provider value={value}>{children}</I18nContext.Provider>;
 }
 
 export function useI18n() {
