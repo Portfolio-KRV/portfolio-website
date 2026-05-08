@@ -36,6 +36,7 @@ export const metadata: Metadata = {
     url: SITE_CONFIG.url,
     siteName: SITE_CONFIG.name,
     locale: 'en_US',
+    alternateLocale: ['es_CL'],
     type: 'website',
     images: [
       {
@@ -64,7 +65,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: SITE_CONFIG.url,
+    canonical: '/',
   },
 };
 

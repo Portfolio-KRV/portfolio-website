@@ -1,4 +1,4 @@
-import { Project, ProjectCategory } from '@/types';
+import { ProjectCategory } from '@/types';
 
 interface ProjectData {
   slug: string;
@@ -13,6 +13,9 @@ interface ProjectData {
   featuredOnHome?: boolean;
   coAuthors?: string[];
   course: { en: string; es: string };
+  // ISO date (YYYY-MM-DD) of the last meaningful change to this project.
+  // Used by the sitemap. Falls back to SITE_CONFIG.lastUpdated.
+  updatedAt?: string;
 }
 
 export const projectsData: ProjectData[] = [

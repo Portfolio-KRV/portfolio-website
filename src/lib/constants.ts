@@ -7,6 +7,9 @@ export const SITE_CONFIG = {
   url: 'https://kevinreyesv.dev',
   linkedin: 'https://linkedin.com/in/kevin-reyes-cs',
   github: 'https://github.com/Portfolio-KRV',
+  // Bump this when site-wide content changes. Sitemap falls back to this
+  // for pages/projects that don't carry their own updatedAt.
+  lastUpdated: '2026-05-07',
 } as const;
 
 // Executive Clarity theme - category badges
