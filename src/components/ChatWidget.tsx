@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import {
   Fragment,
   useEffect,
@@ -88,6 +89,7 @@ interface UiLabels {
   privacyNote: string;
   earlierConversation: string;
   thinking: string;
+  retry: string;
 }
 
 const LABELS: Record<'en' | 'es', UiLabels> = {
@@ -124,6 +126,7 @@ const LABELS: Record<'en' | 'es', UiLabels> = {
     privacyNote: 'Conversations may be saved and analyzed to improve this assistant.',
     earlierConversation: 'Earlier conversation',
     thinking: 'Thinking…',
+    retry: 'Retry',
   },
   es: {
     buttonAria: 'Abrir chat sobre Kevin',
@@ -158,6 +161,7 @@ const LABELS: Record<'en' | 'es', UiLabels> = {
     privacyNote: 'Las conversaciones pueden guardarse y analizarse para mejorar este asistente.',
     earlierConversation: 'Conversación anterior',
     thinking: 'Pensando…',
+    retry: 'Reintentar',
   },
 };
 
@@ -182,6 +186,7 @@ function pickShuffled<T>(arr: readonly T[], n: number): T[] {
 export function ChatWidget() {
   const { language } = useI18n();
   const labels = LABELS[language];
+  const pathname = usePathname();
   const [mounted, setMounted] = useState(false);
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState<ChatMessage[]>([]);
@@ -189,6 +194,9 @@ export function ChatWidget() {
   const [streaming, setStreaming] = useState(false);
   const [showThinking, setShowThinking] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  // The last user message that failed — surfaced via a Retry button so the
+  // user doesn't have to retype on transient server/network errors.
+  const [lastFailedInput, setLastFailedInput] = useState<string | null>(null);
   const [copiedIdx, setCopiedIdx] = useState<number | null>(null);
   const [showNudge, setShowNudge] = useState(false);
   const [shuffledExamples, setShuffledExamples] = useState<string[]>([]);
@@ -321,6 +329,7 @@ export function ChatWidget() {
     const trimmed = text.trim();
     if (!trimmed || streaming) return;
     setError(null);
+    setLastFailedInput(null);
 
     const userMsg: ChatMessage = {
       role: 'user',
@@ -329,10 +338,6 @@ export function ChatWidget() {
     };
     // Drop any in-flight assistant placeholder before composing the next turn
     const cleanedHistory = messages.filter((m) => m.content.trim().length > 0);
-    // First "new" message in a stale-resumed conversation marks the divider.
-    if (staleBoundary === null && messages.length > 0) {
-      // not stale — no divider; nothing to do
-    }
     const next = [...cleanedHistory, userMsg].slice(-MAX_HISTORY);
 
     // Append empty assistant placeholder we'll stream into.
@@ -347,30 +352,32 @@ export function ChatWidget() {
     const controller = new AbortController();
     abortRef.current = controller;
 
+    // Helper used by every error branch so retry behavior is consistent.
+    function failWith(msg: string) {
+      setError(msg);
+      setLastFailedInput(trimmed);
+      setMessages(next);
+    }
+
     try {
       const res = await fetch('/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           messages: next.map(({ role, content }) => ({ role, content })),
+          pathname: pathname ?? undefined,
         }),
         signal: controller.signal,
       });
 
       if (!res.ok) {
-        const msg =
-          res.status === 429
-            ? labels.errorRateLimit
-            : labels.errorGeneric;
-        setError(msg);
-        setMessages(next);
+        failWith(res.status === 429 ? labels.errorRateLimit : labels.errorGeneric);
         return;
       }
 
       const reader = res.body?.getReader();
       if (!reader) {
-        setError(labels.errorGeneric);
-        setMessages(next);
+        failWith(labels.errorGeneric);
         return;
       }
 
@@ -408,7 +415,7 @@ export function ChatWidget() {
                 return copy;
               });
             } else if (payload.type === 'error') {
-              setError(labels.errorGeneric);
+              failWith(labels.errorGeneric);
             }
           } catch {
             // malformed line; ignore
@@ -417,20 +424,19 @@ export function ChatWidget() {
       }
 
       if (!assistantText.trim()) {
-        setError(labels.errorGeneric);
-        setMessages(next);
+        failWith(labels.errorGeneric);
       }
     } catch (err) {
       const e = err as Error;
       if (e.name === 'AbortError') {
-        // User pressed Stop — keep whatever streamed so far.
+        // User pressed Stop — keep whatever streamed so far. Don't surface
+        // it as an error and don't enable retry.
         return;
       }
       // Distinguish network from server. Browser fetch() throws TypeError on
       // network failures (DNS, offline, CORS at request time, etc.).
       const isNetwork = e instanceof TypeError;
-      setError(isNetwork ? labels.errorNetwork : labels.errorGeneric);
-      setMessages(next);
+      failWith(isNetwork ? labels.errorNetwork : labels.errorGeneric);
     } finally {
       setStreaming(false);
       setShowThinking(false);
@@ -459,6 +465,7 @@ export function ChatWidget() {
     abortRef.current?.abort();
     setMessages([]);
     setError(null);
+    setLastFailedInput(null);
     setInput('');
     setStaleBoundary(null);
     try {
@@ -466,6 +473,20 @@ export function ChatWidget() {
     } catch {
       // ignore
     }
+  }
+
+  function retry() {
+    if (!lastFailedInput || streaming) return;
+    // Drop the failed user message from the visible history before retrying
+    // so the same message doesn't appear twice when send() re-appends it.
+    setMessages((prev) => {
+      const last = prev[prev.length - 1];
+      if (last?.role === 'user' && last.content.trim() === lastFailedInput) {
+        return prev.slice(0, -1);
+      }
+      return prev;
+    });
+    send(lastFailedInput);
   }
 
   async function copyMessage(text: string, idx: number) {
@@ -706,8 +727,20 @@ export function ChatWidget() {
                   );
                 })}
                 {error && (
-                  <div className="mr-auto max-w-[90%] rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-700 dark:border-red-900 dark:bg-red-950/40 dark:text-red-300">
-                    {error}
+                  <div className="mr-auto flex max-w-[90%] flex-col gap-1.5 rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-700 dark:border-red-900 dark:bg-red-950/40 dark:text-red-300">
+                    <span>{error}</span>
+                    {lastFailedInput && !streaming && (
+                      <button
+                        type="button"
+                        onClick={retry}
+                        className="inline-flex w-fit items-center gap-1 rounded border border-red-300 bg-white px-2 py-0.5 text-xs font-medium text-red-700 transition-colors hover:bg-red-50 dark:border-red-800 dark:bg-red-950 dark:text-red-200 dark:hover:bg-red-900"
+                      >
+                        <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                        </svg>
+                        {labels.retry}
+                      </button>
+                    )}
                   </div>
                 )}
               </div>

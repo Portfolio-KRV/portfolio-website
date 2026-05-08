@@ -12,6 +12,7 @@
     "@anthropic-ai/sdk": "^0.95.0",
     "@neondatabase/serverless": "^1.1.0",
     "@vercel/analytics": "^2.0.1",
+    "franc-min": "^6.2.0",
     "next": "^16.2.4",
     "react": "19.2.3",
     "react-dom": "19.2.3",

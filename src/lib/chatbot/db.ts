@@ -1,20 +1,20 @@
 /**
  * Chat logging to Neon Postgres.
  *
- * Logs are append-only — one row per completed assistant response (i.e. per
- * full request/response cycle of /api/chat). Nothing is logged if the
- * DATABASE_URL or IP_HASH_SALT env vars are missing — the chatbot keeps
- * working, just without persistence.
+ * Append-only — one row per completed assistant response. Logging silently
+ * skips when DATABASE_URL or IP_HASH_SALT is unset; the chatbot keeps
+ * working.
  *
- * Privacy: the raw IP never hits the database. We store SHA-256(ip + salt)
- * truncated to 16 chars. Rotating IP_HASH_SALT in Vercel invalidates all
- * correlation history.
+ * Privacy: the raw IP never hits the database. We store
+ * SHA-256(ip + salt) truncated to 16 chars. Rotating IP_HASH_SALT in
+ * Vercel invalidates correlation history.
  *
  * Schema: see migrations/001_chat_logs.sql
  */
 
 import { createHash } from 'crypto';
 import { neon } from '@neondatabase/serverless';
+import { franc } from 'franc-min';
 
 interface UsageInfo {
   input_tokens: number;
@@ -36,18 +36,32 @@ function hashIp(ip: string, salt: string): string {
   return createHash('sha256').update(`${ip}:${salt}`).digest('hex').slice(0, 16);
 }
 
+// Fallback for messages too short for franc to classify (~3-5 chars).
+// Picks up obvious Spanish-only chars without depending on the model.
+const ES_FALLBACK_CHARS = /[áéíóúñ¿¡]/i;
+
 function detectLanguage(messages: ChatLogEntry['messages']): 'en' | 'es' | null {
-  // Look at the most recent user message; cheap heuristic via Spanish-only chars.
+  // Look at the most recent user message — conversation can switch
+  // languages mid-flow and the latest turn is the most reliable signal.
   const lastUser = [...messages].reverse().find((m) => m.role === 'user');
   if (!lastUser) return null;
-  return /[áéíóúñ¿¡]/i.test(lastUser.content) ? 'es' : 'en';
+
+  const text = lastUser.content;
+  // Restrict to en/es so franc can't pick exotic candidates (Swahili,
+  // Portuguese, Uzbek) for short texts. Trade-off: if a user writes in
+  // French we'll still bucket them as en or es — acceptable since this
+  // field is just for analytics, not behavior.
+  const code = franc(text, { only: ['eng', 'spa'] });
+  if (code === 'spa') return 'es';
+  if (code === 'eng') return 'en';
+  // 'und' = too short or no signal. Fall back to a cheap accent check.
+  return ES_FALLBACK_CHARS.test(text) ? 'es' : 'en';
 }
 
 export async function logChat(entry: ChatLogEntry): Promise<void> {
   const dbUrl = process.env.DATABASE_URL;
   const salt = process.env.IP_HASH_SALT;
   if (!dbUrl || !salt) {
-    // Logging not configured — silently skip.
     return;
   }
 
@@ -72,7 +86,6 @@ export async function logChat(entry: ChatLogEntry): Promise<void> {
       )
     `;
   } catch (err) {
-    // Never fail the user request because logging failed.
     console.error('[chat-log] Failed to insert chat log:', err);
   }
 }

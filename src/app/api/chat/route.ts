@@ -2,15 +2,14 @@
  * Streaming chat endpoint for the portfolio chatbot.
  *
  * Architecture:
- * - System prompt = instructions + KB, with cache_control on the last block.
- *   ~4K tokens cached after first request → ~10x cheaper inputs on every
- *   turn after warm-up.
- * - claude-sonnet-4-6, max_tokens 1024 (concise responses), no thinking.
- * - Streaming via SSE — server enqueues `data: {...}\n\n` lines, client
- *   reads response.body as a ReadableStream and parses.
- * - Rate limit: 30 requests/hour per IP, in-memory.
- * - Input validation: max 500 chars per user message, max 20 turns of
- *   history, role alternation enforced.
+ * - System prompt = instructions + KB (cached for 1h) + optional page
+ *   context (un-cached suffix). The 1h TTL is a much better fit than the
+ *   default 5m for a low-traffic portfolio.
+ * - claude-sonnet-4-6, max_tokens 1024, no thinking, streaming via SSE.
+ * - Defense in depth: Origin allowlist → per-IP rate limit (in-memory) →
+ *   global daily cap (Postgres).
+ * - Client abort propagates to Anthropic so we don't keep generating
+ *   tokens the user will never see.
  */
 
 import Anthropic from '@anthropic-ai/sdk';
@@ -25,6 +24,7 @@ export const dynamic = 'force-dynamic';
 
 const MAX_USER_MESSAGE_CHARS = 500;
 const MAX_HISTORY_TURNS = 20;
+const MAX_PATHNAME_CHARS = 200;
 const MODEL = 'claude-sonnet-4-6';
 const MAX_TOKENS = 1024;
 
@@ -34,27 +34,44 @@ const MessageSchema = z.object({
 });
 
 const RequestSchema = z.object({
-  messages: z.array(MessageSchema).min(1).max(MAX_HISTORY_TURNS),
+  messages: z
+    .array(MessageSchema)
+    .min(1)
+    .max(MAX_HISTORY_TURNS)
+    .refine(
+      (msgs) =>
+        msgs.length % 2 === 1 &&
+        msgs.every((m, i) => (i % 2 === 0 ? m.role === 'user' : m.role === 'assistant')),
+      {
+        message:
+          'Messages must alternate user → assistant starting with user, ending on user.',
+      },
+    ),
+  // Path the user is currently on. Used as a soft hint to the model
+  // ("user is on /projects/clustering, tailor accordingly"). Optional —
+  // older clients without this field still work.
+  pathname: z.string().max(MAX_PATHNAME_CHARS).optional(),
 });
 
+// Behind a proxy (Cloudflare → Vercel), pick the most trusted source first.
+// `cf-connecting-ip` is set by Cloudflare with the real client IP and can't
+// be spoofed by the client. `x-real-ip` is set by Vercel similarly. Only
+// fall back to `x-forwarded-for[0]` when neither is present, since XFF is
+// trivially spoofable (an attacker can prepend any value).
 function getClientIp(req: NextRequest): string {
-  const forwardedFor = req.headers.get('x-forwarded-for');
-  if (forwardedFor) return forwardedFor.split(',')[0].trim();
+  const cf = req.headers.get('cf-connecting-ip');
+  if (cf) return cf.trim();
   const realIp = req.headers.get('x-real-ip');
   if (realIp) return realIp.trim();
+  const forwardedFor = req.headers.get('x-forwarded-for');
+  if (forwardedFor) return forwardedFor.split(',')[0].trim();
   return 'unknown';
 }
 
-// Allow only requests originating from our own site. Doesn't stop a
-// determined attacker calling from curl/Node (they can spoof the header),
-// but blocks the easy case of a third-party browser script abusing the
-// endpoint while users browse another site.
 const ALLOWED_ORIGINS = new Set([
   'https://kevinreyesv.dev',
   'https://www.kevinreyesv.dev',
 ]);
-// Only Vercel previews of THIS project pass — without the project prefix
-// any *.vercel.app subdomain (incl. ones an attacker creates) would match.
 const ALLOWED_ORIGIN_PATTERNS = [
   /^https:\/\/portfolio-website-[a-z0-9-]+\.vercel\.app$/,
 ];
@@ -66,8 +83,6 @@ function isAllowedOrigin(req: NextRequest): boolean {
     if (ALLOWED_ORIGINS.has(origin)) return true;
     return ALLOWED_ORIGIN_PATTERNS.some((p) => p.test(origin));
   }
-  // Some browsers/transports omit Origin on same-origin requests; fall
-  // back to Referer with a host check.
   const referer = req.headers.get('referer');
   if (referer) {
     try {
@@ -94,7 +109,6 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  // Layer 0: only accept requests from the site itself or Vercel previews.
   if (!isAllowedOrigin(req)) {
     return new Response(
       JSON.stringify({ error: 'Forbidden.' }),
@@ -102,7 +116,6 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  // Layer 1: per-IP rate limit (in-memory, cheap, stops casual hammering).
   const ip = getClientIp(req);
   const limit = checkRateLimit(ip);
   if (!limit.allowed) {
@@ -122,7 +135,6 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  // Layer 2: global daily cap (Postgres-backed, cold-start safe).
   const daily = await checkDailyLimit();
   if (!daily.allowed) {
     return new Response(
@@ -157,20 +169,7 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  const { messages } = parsed.data;
-
-  if (messages[0].role !== 'user') {
-    return new Response(
-      JSON.stringify({ error: 'First message must be from user.' }),
-      { status: 400, headers: { 'Content-Type': 'application/json' } },
-    );
-  }
-  if (messages[messages.length - 1].role !== 'user') {
-    return new Response(
-      JSON.stringify({ error: 'Last message must be from user.' }),
-      { status: 400, headers: { 'Content-Type': 'application/json' } },
-    );
-  }
+  const { messages, pathname } = parsed.data;
 
   const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
   const userAgent = req.headers.get('user-agent');
@@ -179,12 +178,15 @@ export async function POST(req: NextRequest) {
     async start(controller) {
       let assistantText = '';
       try {
-        const apiStream = client.messages.stream({
-          model: MODEL,
-          max_tokens: MAX_TOKENS,
-          system: buildSystemPrompt(),
-          messages: messages.map((m) => ({ role: m.role, content: m.content })),
-        });
+        const apiStream = client.messages.stream(
+          {
+            model: MODEL,
+            max_tokens: MAX_TOKENS,
+            system: buildSystemPrompt(pathname),
+            messages: messages.map((m) => ({ role: m.role, content: m.content })),
+          },
+          { signal: req.signal },
+        );
 
         apiStream.on('text', (delta) => {
           assistantText += delta;
@@ -211,8 +213,6 @@ export async function POST(req: NextRequest) {
         );
         controller.close();
 
-        // Persist the conversation. logChat is best-effort and silently
-        // skips if DATABASE_URL/IP_HASH_SALT are unset.
         await logChat({
           ip,
           language: null,
@@ -225,10 +225,18 @@ export async function POST(req: NextRequest) {
           user_agent: userAgent,
         });
       } catch (error) {
-        const message =
-          error instanceof Anthropic.APIError
-            ? `Anthropic API error ${error.status}`
-            : 'Unexpected server error';
+        // Client disconnected mid-stream — nothing to send back, just stop.
+        if (req.signal.aborted) {
+          controller.close();
+          return;
+        }
+        const isApiErr = error instanceof Anthropic.APIError;
+        const message = isApiErr
+          ? `Anthropic API error ${error.status}`
+          : 'Unexpected server error';
+        // Log full detail server-side for debugging; client gets the safe
+        // generic message above.
+        console.error('[chat] stream error:', error);
         controller.enqueue(sseEncode({ type: 'error', error: message }));
         controller.close();
       }
