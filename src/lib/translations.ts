@@ -60,7 +60,7 @@ export const translations = {
 
       // My Approach section
       approachTitle: 'My Approach',
-      approach: "I work problem-first, not tool-first. The choice of stack, model, or pattern is downstream of understanding what's actually broken and which constraint matters most. The same lens travels well across technical and people problems: a team's quarterly priorities and an ETL's bottleneck both reward whoever diagnoses before prescribing.",
+      approach: "I work problem-first, not tool-first. The choice of stack, model, or pattern is downstream of understanding what's actually broken and which constraint matters most. The same applies to technical and people problems alike: whether it's an ETL bottleneck or a team's quarterly priorities, I diagnose before proposing solutions.",
 
       // What drives me
       drivesTitle: 'What Drives Me',
@@ -134,7 +134,7 @@ export const translations = {
 
       // IEEE Experience
       ieeeTitle: 'IEEE CAI 2025 Experience',
-      ieeeContent: "With Vasco Cortez I worked on a modification to positional encoding in transformers — adapting it to represent the actual temporal distance between transactions in a sequence, rather than just their order. We tested it on transactional fraud detection. The paper was accepted at IEEE CAI 2025 and I presented it in Silicon Valley. The most useful part wasn't the talk itself but the conversations afterwards: applied ML research is a small world, and being there in person changes what you ship the year after.",
+      ieeeContent: "With Vasco Cortez I worked on a modification to positional encoding in transformers — adapting it to represent the actual temporal distance between transactions in a sequence, rather than just their order. We tested it on transactional fraud detection. The paper was accepted at IEEE CAI 2025 and I presented it in Silicon Valley. Beyond the talk itself, the most valuable part was the conversations with other researchers and practitioners in the field.",
 
       // Technical Skills section
       skillsTitle: 'Technical Skills',
@@ -261,7 +261,7 @@ export const translations = {
 
       // My Approach section
       approachTitle: 'Mi Enfoque',
-      approach: "Trabajo desde el problema, no desde la herramienta. Qué stack, modelo o patrón se elige viene después de entender qué está realmente roto y qué restricción pesa más. Esa misma lente funciona bien en problemas técnicos y humanos: las prioridades trimestrales de un equipo y el cuello de botella de una ETL premian igual a quien diagnostica antes de prescribir.",
+      approach: "Trabajo desde el problema, no desde la herramienta. Qué stack, modelo o patrón se elige viene después de entender qué está roto y qué restricción pesa más. Lo mismo aplica tanto a problemas técnicos como humanos: ya sea un cuello de botella en una ETL o las prioridades de un equipo, primero diagnostico antes de proponer soluciones.",
 
       // What drives me
       drivesTitle: 'Lo que Me Motiva',
@@ -335,7 +335,7 @@ export const translations = {
 
       // IEEE Experience
       ieeeTitle: 'Experiencia IEEE CAI 2025',
-      ieeeContent: "Con Vasco Cortez trabajamos en una modificación al positional encoding de los transformers — adaptándolo para representar la distancia temporal real entre transacciones en una secuencia, en vez de solo su orden. Lo probamos en detección de fraude transaccional. El paper fue aceptado en IEEE CAI 2025 y lo presenté en Silicon Valley. La parte más útil no fue la charla en sí, sino las conversaciones de después: la investigación aplicada de ML es un mundo pequeño, y estar ahí en persona cambia lo que construyes el año siguiente.",
+      ieeeContent: "Con Vasco Cortez trabajamos en una modificación al positional encoding de los transformers — adaptándolo para representar la distancia temporal real entre transacciones en una secuencia, en vez de solo su orden. Lo probamos en detección de fraude transaccional. El paper fue aceptado en IEEE CAI 2025 y lo presenté en Silicon Valley. Más allá de la presentación misma, lo más valioso fueron las conversaciones con otros investigadores y profesionales del área.",
 
       // Technical Skills section
       skillsTitle: 'Habilidades Técnicas',
