@@ -3,7 +3,7 @@
 import { useI18n } from '@/lib/i18n-context';
 
 export default function ExperiencePage() {
-  const { t, language } = useI18n();
+  const { t } = useI18n();
 
   // Heroicons outline paths
   const PATHS = {
@@ -28,10 +28,7 @@ export default function ExperiencePage() {
       <div className="relative z-10 mx-auto max-w-4xl px-4 py-20 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-16 text-center">
-          <p className="animate-fade-in-up mb-6 text-sm uppercase tracking-[0.2em] text-[var(--foreground-muted)]">
-            {language === 'es' ? 'Experiencia' : 'Experience'}
-          </p>
-          <h1 className="animate-fade-in-up delay-100 text-4xl font-bold tracking-tight text-[var(--foreground)] sm:text-5xl">
+          <h1 className="animate-fade-in-up text-4xl font-bold tracking-tight text-[var(--foreground)] sm:text-5xl">
             {t.experience.title}
           </h1>
         </div>

@@ -38,13 +38,10 @@ export default function ContactPage() {
       <div className="relative z-10 mx-auto max-w-4xl px-4 py-20 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-16 text-center">
-          <p className="animate-fade-in-up mb-6 text-sm uppercase tracking-[0.2em] text-[var(--foreground-muted)]">
-            Get in touch
-          </p>
-          <h1 className="animate-fade-in-up delay-100 mb-6 text-4xl font-bold tracking-tight text-[var(--foreground)] sm:text-5xl">
+          <h1 className="animate-fade-in-up mb-6 text-4xl font-bold tracking-tight text-[var(--foreground)] sm:text-5xl">
             {t.contact.title}
           </h1>
-          <p className="animate-fade-in-up delay-200 text-lg text-[var(--foreground-muted)]">
+          <p className="animate-fade-in-up delay-100 text-lg text-[var(--foreground-muted)]">
             {t.contact.subtitle}
           </p>
         </div>

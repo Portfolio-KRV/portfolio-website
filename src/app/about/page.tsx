@@ -34,10 +34,7 @@ export default function AboutPage() {
       <div className="relative z-10 mx-auto max-w-4xl px-4 py-20 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-16">
-          <p className="animate-fade-in-up mb-6 text-sm uppercase tracking-[0.2em] text-[var(--foreground-muted)]">
-            {language === 'es' ? 'Perfil' : 'Profile'}
-          </p>
-          <h1 className="animate-fade-in-up delay-100 mb-8 text-4xl font-bold tracking-tight text-[var(--foreground)] sm:text-5xl">
+          <h1 className="animate-fade-in-up mb-8 text-4xl font-bold tracking-tight text-[var(--foreground)] sm:text-5xl">
             {t.about.title}
           </h1>
 
