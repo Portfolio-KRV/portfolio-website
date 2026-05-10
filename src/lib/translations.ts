@@ -31,10 +31,6 @@ export const translations = {
       intro: "I work across data engineering, ML, and team leadership. My background spans building production fraud detection on real transactional data and designing data warehouses that replaced months of legacy work — and I now lead the engineering org at a payments platform. I'm drawn to systems-level questions: how data flows shape decisions, how teams compound over time, what keeps a platform — software, data, and infrastructure — quietly reliable.",
       hook: "Started with BI dashboards in copper mining as a student intern. Now I co-author transformer research at IEEE and lead the engineering org of a payments platform.",
 
-      // Current Role
-      currentRole: 'Current Role',
-      currentRoleContent: "CTO at FlowPagos since July 2025. I lead three technology teams — Software Development, Infrastructure, and Data & Analytics — totaling 25+ people. I own the technical roadmap and align it with business priorities. Stepped into the role after building and leading the data and analytics area as Data & Analytics Lead.",
-
       // Achievements section
       achievements: 'Key Achievements',
       dataEngineering: {
@@ -178,7 +174,6 @@ export const translations = {
     },
     experience: {
       title: 'Career Path',
-      subtitle: 'From Data Scientist at FlowPagos to CTO — and the path between.',
     },
     publications: {
       title: 'Publications',
@@ -231,10 +226,6 @@ export const translations = {
       title: 'Sobre Mí',
       intro: "Trabajo en data engineering, ML y liderazgo de equipos. He construido detección de fraude en producción sobre datos transaccionales reales y diseñado data warehouses que reemplazaron meses de procesos legacy — y ahora lidero la gerencia de tecnología de una plataforma de pagos. Me interesan las preguntas a nivel de sistema: cómo los flujos de datos moldean decisiones, cómo los equipos acumulan valor con el tiempo, qué hace que una plataforma — software, datos e infraestructura — sea sólida sin hacer ruido.",
       hook: "Empecé con paneles de BI en minería de cobre como practicante. Hoy soy co-autor de investigación con transformers en IEEE y lidero la gerencia de tecnología en una plataforma de pagos.",
-
-      // Current Role
-      currentRole: 'Rol Actual',
-      currentRoleContent: "CTO en FlowPagos desde julio de 2025. Lidero tres equipos de tecnología — Desarrollo de Software, Infraestructura, y el área de Datos y Analítica — sumando 25+ personas. Soy responsable del roadmap técnico y lo alineo con las prioridades del negocio. Asumí el rol después de crear y liderar el área de datos y analítica como Data & Analytics Lead.",
 
       // Achievements section
       achievements: 'Logros Destacados',
@@ -379,7 +370,6 @@ export const translations = {
     },
     experience: {
       title: 'Trayectoria',
-      subtitle: 'De Data Scientist en FlowPagos a CTO — y el recorrido entre ambos.',
     },
     publications: {
       title: 'Publicaciones',

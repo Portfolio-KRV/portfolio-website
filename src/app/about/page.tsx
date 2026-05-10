@@ -52,22 +52,6 @@ export default function AboutPage() {
           </p>
         </div>
 
-        {/* Current Role highlight */}
-        <section className="animate-fade-in-up delay-300 card mb-16 rounded-lg p-8">
-          <div className="mb-6 flex items-start gap-4">
-            <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded border border-[var(--border-accent)] bg-[var(--accent-primary)]/10">
-              <span className="text-lg font-bold text-[var(--accent-primary)]">CTO</span>
-            </div>
-            <div>
-              <h2 className="text-xl font-semibold text-[var(--foreground)]">{t.about.currentRole}</h2>
-              <p className="text-sm text-[var(--accent-primary)]">FlowPagos</p>
-            </div>
-          </div>
-          <p className="leading-relaxed text-[var(--foreground-muted)]">
-            {t.about.currentRoleContent}
-          </p>
-        </section>
-
         {/* Key Achievements */}
         <section className="mb-16">
           <h2 className="animate-fade-in-up delay-400 mb-10 text-2xl font-semibold text-[var(--foreground)]">

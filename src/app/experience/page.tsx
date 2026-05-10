@@ -29,14 +29,11 @@ export default function ExperiencePage() {
         {/* Header */}
         <div className="mb-16 text-center">
           <p className="animate-fade-in-up mb-6 text-sm uppercase tracking-[0.2em] text-[var(--foreground-muted)]">
-            {language === 'es' ? 'Trayectoria' : 'Career'}
+            {language === 'es' ? 'Experiencia' : 'Experience'}
           </p>
-          <h1 className="animate-fade-in-up delay-100 mb-6 text-4xl font-bold tracking-tight text-[var(--foreground)] sm:text-5xl">
+          <h1 className="animate-fade-in-up delay-100 text-4xl font-bold tracking-tight text-[var(--foreground)] sm:text-5xl">
             {t.experience.title}
           </h1>
-          <p className="animate-fade-in-up delay-200 mx-auto max-w-2xl text-lg text-[var(--foreground-muted)]">
-            {t.experience.subtitle}
-          </p>
         </div>
 
         {/* Timeline */}
